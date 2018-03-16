@@ -12,7 +12,7 @@ class forntendController extends Controller
    
 	public function __construct()
 	{
-		//dd(Auth::user()->id);
+		dd(Auth::user()->id);
 		$this->middleware('auth');
 		
 	}
