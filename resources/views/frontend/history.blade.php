@@ -13,39 +13,80 @@
                   <div class="left-office-history">
                      <div class="hr-speaking mCustomScrollbar">
                         <div class="content">
-                           <ul>
-                              <li>Flatworld as an idea was conceived in 1999 as outsource2india. established in 2004 in the US and india as Flatworld Solutions Inc.. nad has imacted over 10.000+ customers and over 3000+ employees in a span of 13 years.</li>
-                              <li>Flatworld as an idea was conceived in 1999 as outsource2india. established in 2004 in the US and india as Flatworld Solutions Inc.. nad has imacted over 10.000+ customers and over 3000+ employees in a span of 13 years.</li>
-                              <li>Flatworld as an idea was conceived in 1999 as outsource2india. established in 2004 in the US and india as Flatworld Solutions Inc.. nad has imacted over 10.000+ customers and over 3000+ employees in a span of 13 years.</li>
-                              <li>Flatworld as an idea was conceived in 1999 as outsource2india. established in 2004 in the US and india as Flatworld Solutions Inc.. nad has imacted over 10.000+ customers and over 3000+ employees in a span of 13 years.</li>
-                              <li>Flatworld as an idea was conceived in 1999 as outsource2india. established in 2004 in the US and india as Flatworld Solutions Inc.. nad has imacted over 10.000+ customers and over 3000+ employees in a span of 13 years.</li>
+                        {!!html_entity_decode($historytext[0]['historytext'])!!}
+                           <!-- <ul>
+                              <li>Flatworld as an idea was conceived in 1999 as Outsource2india, established in 2004 in the US and India as Flatworld solutions Inc., and has impacted over 10,000+ customers and over 3000+ employees in a span of 13 years.
+                              </li>
+
+                              <li>Your company pioneered the start-up culture before it became a fad, it embraced technology early to break geographic boundaries, and it diversified into multiple services to become a Global Services supermarket when everyone else was specialising in one service.</li>
+
+                              <li>Your company continues to grow, with one purpose: to provide a complete range of Information Technology services to the global business community, from the most cost-effective global locations, giving the highest qualitative and financial value to our customers.</li>
+
+                              <li>Starting with data processing over 12 years ago, Flatworld Solutions offers 14 different IT services today, ranging from the relatively simple to the most complex processes.</li>
+
+                              <li>Experience the joy of working alongside digital marketers, adobe artists, video editors, software gurus, structural engineers, architects, data analysts… the list goes on. Life at Flatworld can never get boring, so many people and so many opportunities. Truly expanding possibilities… of customer, employee and shareholders.</li>
+
                               <li>Flatworld as an idea was conceived in 1999 as outsource2india. established in 2004 in the US and india as Flatworld Solutions Inc.. nad has imacted over 10.000+ customers and over 3000+ employees in a span of 13 years.</li>
                               <li>Flatworld as an idea was conceived in 1999 as outsource2india. established in 2004 in the US and india as Flatworld Solutions Inc.. nad has imacted over 10.000+ customers and over 3000+ employees in a span of 13 years.</li>
                               <li>Flatworld as an idea was conceived in 1999 as outsource2india. established in 2004 in the US and india as Flatworld Solutions Inc.. nad has imacted over 10.000+ customers and over 3000+ employees in a span of 13 years.</li>
                               <li>Flatworld as an idea was conceived in 1999 as outsource2india. established in 2004 in the US and india as Flatworld Solutions Inc.. nad has imacted over 10.000+ customers and over 3000+ employees in a span of 13 years.</li>
                               <li>Flatworld as an idea was conceived in 1999 as outsource2india. established in 2004 in the US and india as Flatworld Solutions Inc.. nad has imacted over 10.000+ customers and over 3000+ employees in a span of 13 years.</li>
                            </ul>
-                           <p class="title"> A little update over our current office location and staff strengths:</p>
+
+
+                           
+                           <p class="title"> A little update on our current office location and staff strengths:</p>
                            <div class="office-location row">
-                              <div class="col-sm-6">
+                              <div class="col-sm-12">
                                  <p> FLATWORLD HAS 3 DELIVERY OFFICES:</p>
                               </div>
-                              <div class="col-sm-3">
+                           </div>
+                           <div class="office-name row">
+                              <div class="col-sm-4">
                                  <figure>
                                     <img src="images/office-1.png">
-                                    <figcaption> BENGALURU</figcaption>
+                                    <figcaption> Bangalore – Banaswadi office with 310 employees (you will be working out of this office)</figcaption>
                                  </figure>
                               </div>
-                              <div class="col-sm-3">
+                              <div class="col-sm-4">
                                  <figure>
                                     <img src="images/office-1.png">
-                                    <figcaption>PHILIPPINES</figcaption>
+                                    <figcaption> Bangalore- Infantry road with 200 employees</figcaption>
+                                 </figure>
+                              </div>
+                              <div class="col-sm-4">
+                                 <figure>
+                                    <img src="images/office-1.png">
+                                    <figcaption>Philippines- Davao office with 400+ employees</figcaption>
                                  </figure>
                               </div>
                            </div>
-                           <div class="working-out-office">
-                              <span><i>(you will be working out of this office)</i></span>
+                           <div class="office-location row">
+                              <div class="col-sm-12">
+                                 <p>FLATWORLD HAS 2 SALES OFFICES:</p>
+                              </div>
+                           </div>
+                           <div class="office-name row">
+                              <div class="col-sm-6">
+                                 <figure>
+                                    <figcaption>New Jersey, USA</figcaption>
+                                 </figure>
+                              </div>
+                              <div class="col-sm-6">
+                                 <figure>
+                                    <figcaption>London, UK</figcaption>
+                                 </figure>
+                              </div>
+                           </div> -->
+
+
+                           <!-- <div class="working-out-office">
+                              <span><i>Flatworld has 2 Sales offices</i></span>
                               <ul>
+                                 <li>New Jersey, USA</li>
+                                 <li>London, UK</li>
+                              </ul> -->
+                              <!-- <ul>
                                  <li>
                                     Banaswadi
                                     <div class="employee-count">
@@ -67,7 +108,7 @@
                                        <span> 400+</span>
                                     </div>
                                  </li>
-                              </ul>
+                              </ul> -->
                            </div>
                         </div>
                      </div>

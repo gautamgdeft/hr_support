@@ -669,7 +669,7 @@
  .main-work-page .hr-speaking .content {
      padding: 0px 0px 30px 0px;
      max-width: 450px;
-     margin-left: 33px;
+     margin-left: 46px;
 }
  .main-work-page .mCSB_scrollTools{
     left:-45px;
@@ -1264,7 +1264,7 @@
 }
  .growth-page .hr-speaking .content{
     max-width:310px;
-     padding-left:18px;
+     padding-left:31px;
      padding-bottom:0px;
 }
  .growth-page .hr-speaking{
@@ -1422,6 +1422,14 @@
 div#top-myNavbar {
     float: right;
 }
+
+/*16-march-2017*/
+.office-name.row {
+    display: inline-block;
+    margin-top: 28px;
+    padding-left: 25px;
+}
+.hr-speaking ul.number, .hr-speaking ul.number li{list-style: decimal !important;}
 
  @media ( max-width:1150px ) { 
 .growth-page .main-page, body.main-work-page .main-page{    background-size: cover;

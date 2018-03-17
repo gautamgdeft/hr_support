@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use Session;
 use Hash;
+use App\Home;
+use App\History;
 
 class forntendController extends Controller
 {
@@ -19,13 +21,15 @@ class forntendController extends Controller
 
     public function homepage (){
 
-		return view ('frontend.index');
+        $home = Home::all();
+        return view ('frontend.index', compact('home'));
 
 	}
 
 	public function history (){
 
-		return view ('frontend.history');
+        $historytext = History::all();
+		return view ('frontend.history', compact('historytext'));
 
 	}
 

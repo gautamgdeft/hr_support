@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Home;
+use App\History;
 use Session;
 use Auth;
 use Hash;
@@ -17,24 +18,6 @@ class backendController extends Controller
     	return view('backend.index');
     }
 /*dashboard main page section ends */
-
-/*-----------------------------------------------------------------------*/
-
-/*dashboard home page section */
-    public function homesection(){
-
-    	return view('backend.homepage');
-    }
-/*dashboard home page save data query*/
-    public function homeseccontent (Request $request){
-
-    	//dd($request->all());
-				$newuserdetail = new Home($request->all());
-				$newuserdetail->save();
-				Session::flash('success', 'Page Content updated.');
-            	return redirect()->route('homesection');
-    }
-/*dashboard home page section ends*/
 
 /*-----------------------------------------------------------------------*/
 
@@ -114,5 +97,86 @@ class backendController extends Controller
 /*dasboard User profile section ends*/
 
 /*-----------------------------------------------------------------------*/
+    
+    /*dashboard home page section */
+        public function homesection(){
+
+            $homesecdata = Home::all();
+            //dd($homesecdata[0]['id']);
+            if(!empty($homesecdata[0]['id'])){
+                return view('backend.home.homeedit', compact('homesecdata'));
+            } 
+            else{
+                return view('backend.home.homemain');
+            }
+        }
+    /*dashboard home page save data query*/
+        public function homeseccontent (Request $request){
+
+            //dd($request->all());
+                    $newuserdetail = new Home($request->all());
+                    $newuserdetail->save();
+                    Session::flash('success', 'Page Content updated.');
+                    return redirect()->route('homesection'); 
+        }
+
+       /*dashbiard home page update data query*/ 
+
+        public function homesecupdate(Request $request){
+
+            $homesecdata  = Home::find($request->home_id);
+            
+          
+
+            $homesecdata->update($request->all());
+
+
+            return redirect()->route('homesection')->with('homesuccess' , 'update successfully'); 
+
+        }
+
+
+    /*dashboard home page section ends*/
+
+/*-----------------------------------------------------------------------*/
+
+    /*dashboard History page section */
+
+        public function historysection(){
+
+            $historydata = History::all();
+
+            if(!empty($historydata[0]['id'])){
+                return view('backend.history.historyedit', compact('historydata'));
+            } 
+            else{
+                return view('backend.history.historymain');
+            }
+        }
+    /*dashboard History page save data query*/
+        public function historyseccontent (Request $request){
+
+                    $historytext = new History($request->all());
+                    $historytext->save();
+                    Session::flash('success', 'Page Content updated.');
+                    return redirect()->route('history.section'); 
+        }
+
+    /*dashbiard HIstory page update data query*/ 
+
+        public function historysecupdate(Request $request){
+
+            $historydata  = History::find($request->history_id);
+            $historydata->update($request->all());
+            return redirect()->route('history.section')->with('historysuccess' , 'update successfully'); 
+
+        }
+
+
+    /*dashboard History page section ends*/
+
+/*-----------------------------------------------------------------------*/
+
+
 
 }

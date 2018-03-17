@@ -40,7 +40,13 @@
 
                         <li class="{{ Request::is('home-section') ? 'active' : '' }}" id="home">
                             <a href="{{route('homesection')}}">
-                                <i class="fa fa-th"></i> <span>Home Section</span>
+                                <i class="fa fa-th"></i> <span>Home Page</span>
+                            </a>
+                        </li>
+
+                         <li class="{{ Request::is('history') ? 'active' : '' }}" id="home">
+                            <a href="{{route('history.section')}}">
+                                <i class="fa fa-th"></i> <span>History Page</span>
                             </a>
                         </li>
                        <!--  <li>

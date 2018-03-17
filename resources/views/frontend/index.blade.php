@@ -15,8 +15,9 @@
                   <div class="col-sm-3">
                      <div class="statement_sec">
                         <div class="content">
-                           <h3>mission statement</h3>
-                           <p>"flatworld is committed to providing ongoing value to our customers. we leverage technology and implement best practices, to provide a range of high quality and cost-efficient information technology solutions, from global locations enabling customers achieve their business  goals".</p>
+                           <!-- <h3>Mission Statement</h3>
+                           <p>"FLATWORLD IS COMMITTED TO PROVIDING ONGOING VALUE TO OUR CUSTOMERS. WE LEVERAGE TECHNOLOGY AND IMPLEMENT BEST PRACTICES, TO PROVIDE A RANGE OF HIGH QUALITY AND COST-EFFICIENT INFORMATION TECHNOLOGY SOLUTIONS, FROM GLOBAL LOCATIONS ENABLING CUSTOMERS ACHIEVE THEIR BUSINESS GOALS".</p> -->
+                           {!!html_entity_decode($home[0]['columnleft'])!!}
                         </div>
                      </div>
                   </div>
@@ -32,8 +33,9 @@
                   <div class="col-sm-3">
                      <div class="statement_sec pull-right">
                         <div class="content">
-                           <h3>vision statement</h3>
-                           <p>"flatworld solutions will be a partner of choice bt providing value to enable our customer's long-term sustainable growth".</p>
+                           <!-- <h3>Vision Statement</h3>
+                           <p>"FLATWORLD SOLUTIONS WILL BE A PARTNER OF CHOICE BY PROVIDING VALUE TO ENABLE OUR CUSTOMER’S LONG-TERM SUSTAINABLE GROWTH".</p> -->
+                           {!!html_entity_decode($home[0]['columnright'])!!}
                         </div>
                      </div>
                   </div>
@@ -73,10 +75,14 @@
                      <div class="modal-content">
                         <div class="modal-header">
                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           <!--        <h4 class="modal-title">Modal Header</h4>-->
+                           <!--<h4 class="modal-title">Modal Header</h4>-->
                         </div>
                         <div class="modal-body">
-                           <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yAoLSRbwxL8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                           <iframe width="560" height="315" src="{{strip_tags($home[0]['columncenter'])}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                           
+                           <!-- {!!html_entity_decode($home[0]['columncenter'])!!}
+                           {{strip_tags($home[0]['columncenter'])}} -->
+
                         </div>
                      </div>
                   </div>

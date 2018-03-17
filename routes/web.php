@@ -67,10 +67,7 @@ Route:: post('/editpassword','forntendController@updateuserpassword')->name('fro
 
 Route:: get('/LaraAdmin','backendController@adminhomepage')->name('adminhomepage');
 
-Route:: get('/home-section','backendController@homesection')->name('homesection');
-Route:: post('/home-section','backendController@homeseccontent')->name('homeseccontent');
-
-/*---------------user profile related routes-------------------*/
+/*---------------user profile related routes---------------------------------*/
 Route:: get('/user-profile','backendController@userprofile')->name('userprofile');
 //edit user profile
 Route:: get('/edit-user-profile','backendController@userprofileedit')->name('user.profile.edit');
@@ -78,4 +75,20 @@ Route:: post('/edit-user-profile','backendController@userprofileupdate')->name('
 //update user password
 Route:: get('/edit-user-password','backendController@userpasswordchange')->name('user.password.change');
 Route:: post('/edit-user-password','backendController@userpasswordupdate')->name('user.password.update');
-/*----------------user profile related routes ended---------------------*/
+/*----------------user profile related routes ended--------------------------*/
+
+/*---------------Homepage related routes-------------------------------------*/
+Route:: get('/home-section','backendController@homesection')->name('homesection');
+//Save Homepage
+Route:: post('/home-section','backendController@homeseccontent')->name('homeseccontent');
+//Update Homepage
+Route:: post('/home-section-update','backendController@homesecupdate')->name('homesecupdate');
+/*----------------Homepage related routes ended-------------------------------*/
+
+/*---------------Historypage related routes-----------------------------------*/
+Route:: get('/History-section','backendController@historysection')->name('history.section');
+//Save Homepage
+Route:: post('/History-edit','backendController@historyseccontent')->name('history.edit');
+//Update Homepage
+Route:: post('/History-update','backendController@historysecupdate')->name('history.update');
+/*----------------Historypage related routes ended-----------------------------*/
