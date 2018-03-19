@@ -26,7 +26,7 @@
                 <h3 class='box-title'>History Page Content</h3>
             </div>
             <div class='box-body pad'>
-                <textarea id="editor1" name="historytext" rows="10" cols="80"></textarea>
+                <textarea id="editor1" name="historytext" rows="10" cols="80" class="summernote"></textarea>
             </div>
         </div>
         <input type="submit" name="submit" value="submit">

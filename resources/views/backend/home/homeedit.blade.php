@@ -29,7 +29,7 @@
                 <input type="hidden" name="home_id" value="{!!html_entity_decode($homesecdata[0]['id'])!!}">
             </div>
             <div class='box-body pad'>
-                <textarea id="editor1" name="columnleft" rows="10" cols="80">{!!html_entity_decode($homesecdata[0]['columnleft'])!!}</textarea>
+                <textarea id="editor1" name="columnleft" rows="10" cols="80" class="summernote">{!!html_entity_decode($homesecdata[0]['columnleft'])!!}</textarea>
             </div>
         </div>
         <div class='box box-info'>
@@ -37,7 +37,7 @@
                 <h3 class='box-title'>Home Page Center Text</h3>
             </div>
             <div class='box-body pad'>
-                <textarea id="editor2" name="columncenter" rows="10" cols="80">{!!html_entity_decode($homesecdata[0]['columncenter'])!!}</textarea>
+                <textarea id="editor2" name="columncenter" rows="10" cols="80" class="summernote">{!!html_entity_decode($homesecdata[0]['columncenter'])!!}</textarea>
             </div>
         </div>
         <div class='box box-info'>
@@ -45,7 +45,7 @@
                 <h3 class='box-title'>Home Page Right Side Text</h3>
             </div>
             <div class='box-body pad'>
-                <textarea id="editor3" name="columnright" rows="10" cols="80">{!!html_entity_decode($homesecdata[0]['columnright'])!!}</textarea>
+                <textarea id="editor3" name="columnright" rows="10" cols="80" class="summernote">{!!html_entity_decode($homesecdata[0]['columnright'])!!}</textarea>
             </div>
         </div>
         <input type="submit" name="submit" value="Update">

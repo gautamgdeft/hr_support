@@ -65,6 +65,8 @@ Route:: post('/editpassword','forntendController@updateuserpassword')->name('fro
 */
 
 
+
+
 Route:: get('/LaraAdmin','backendController@adminhomepage')->name('adminhomepage');
 
 /*---------------user profile related routes---------------------------------*/

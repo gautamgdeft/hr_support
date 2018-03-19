@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use checkrole;
 use Auth;
 use Session;
 use Hash;
@@ -14,9 +15,8 @@ class forntendController extends Controller
    
 	public function __construct()
 	{
-		//dd(Auth::user()->id);
-		$this->middleware('auth');
-		
+		//$this->middleware('checkrole:user');
+		$this->middleware('checkrole:user');
 	}
 
     public function homepage (){

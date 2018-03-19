@@ -73,12 +73,12 @@
                   <div class="modal-dialog">
                      <!-- Modal content-->
                      <div class="modal-content">
-                        <div class="modal-header">
+                        <!-- <div class="modal-header">
                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           <!--<h4 class="modal-title">Modal Header</h4>-->
-                        </div>
-                        <div class="modal-body">
-                           <iframe width="560" height="315" src="{{strip_tags($home[0]['columncenter'])}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          <h4 class="modal-title">Modal Header</h4>
+                        </div> -->
+                        <div class="modal-body videoyoutube">
+                           <iframe width="100%" height="315" src="{{strip_tags($home[0]['columncenter'])}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                            
                            <!-- {!!html_entity_decode($home[0]['columncenter'])!!}
                            {{strip_tags($home[0]['columncenter'])}} -->

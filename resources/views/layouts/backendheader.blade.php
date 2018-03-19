@@ -60,14 +60,22 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div> -->
                                     <div class="pull-right">
-                                       <a href="{{ route('logout') }}"
+                                       <!-- <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="btn btn-default btn-flat">
                                             Logout
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
+                                            {{ csrf_field() }} 
+                                        </form> -->
+
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                  document.getElementById('logout-form').submit();">
+                                                  {{ Auth::user()->name }} / Logout
+                                         </a>
+                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                  {{ csrf_field() }}
+                                         </form>
                                        
                                     </div>
                                 </li>
@@ -106,17 +114,14 @@
         <!-- Bootstrap WYSIHTML5 -->
         <script src="backend/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
         <!-- iCheck -->
-        <script src="backend/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+       <script src="backend/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 
         <!-- AdminLTE App -->
         <script src="backend/js/AdminLTE/app.js" type="text/javascript"></script>
         
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="backend/js/AdminLTE/dashboard.js" type="text/javascript"></script> 
-
+      <script src="backend/js/AdminLTE/dashboard.js" type="text/javascript"></script> 
         <script src="backend/js/plugins/ckeditor/ckeditor.js" type="text/javascript"></script>
-        
-
         <script type="text/javascript">
             $(function() {
                 CKEDITOR.replace('editor1');
@@ -124,7 +129,23 @@
                 CKEDITOR.replace('editor3');
                 $(".textarea").wysihtml5();
             });  
-        </script>
+        </script> 
+
+        
+        <!--Summer Note -->
+            <!-- include libraries(jQuery, bootstrap) -->
+          <!--   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+            <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+             -->
+            <!-- <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>    
+             
+            <script type="text/javascript">
+                    $(document).ready(function() {
+                        //alert("786");
+                        $('.summernote').summernote();
+                    });
 
 
 

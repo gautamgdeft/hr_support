@@ -29,8 +29,13 @@
                 <input type="hidden" name="history_id" value="{!!html_entity_decode($historydata[0]['id'])!!}">
             </div>
             <div class='box-body pad'>
-                <textarea id="editor1" name="historytext" rows="10" cols="80">{!!html_entity_decode($historydata[0]['historytext'])!!}</textarea>
+                <textarea id="editor1" name="historytext" rows="10" cols="80" class="summernote">{!!html_entity_decode($historydata[0]['historytext'])!!}</textarea>
             </div>
+
+            <!-- <div class='box-body pad'>
+                <textarea id="editor1" name="historytext" rows="10" cols="80" class="summernote">{!!html_entity_decode($historydata[0]['historytext'])!!}</textarea>
+            </div> -->
+
         </div>
         <input type="submit" name="submit" value="Update">
     </form>

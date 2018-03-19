@@ -32,7 +32,11 @@
                   <!--Flash messgaes ends-->
                 <form name="editdetails" method="Post" action="{{ route('front.password.update') }}">
                 {{ csrf_field() }}
-                    <div class="panel-body">
+                    <div class="panel-body edit-user-details-page">
+                    <div class="form-group">
+                  <h1>Change Password</h1>
+                </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label>Current  Password</label>
                               <input id="currentpassword" type="password" class="form-control" name="currentpassword" required>
@@ -47,8 +51,9 @@
                         </div> 
                         <div class="form-group"> 
                           <input type="submit" class="submitting" name="submit" value="Submit">
+                            <a class="button" href="{{route('front.view.user')}}">Back</a>
                         </div>
-                        <a class="button" href="{{route('front.view.user')}}">Back</a>
+                      
                     </div>
                 </form>            
                </div>

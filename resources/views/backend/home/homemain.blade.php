@@ -26,7 +26,7 @@
                 <h3 class='box-title'>Home Page Left Side Text</h3>
             </div>
             <div class='box-body pad'>
-                <textarea id="editor1" name="columnleft" rows="10" cols="80"></textarea>
+                <textarea id="editor1" name="columnleft" rows="10" cols="80" class="summernote"></textarea>
             </div>
         </div>
         <div class='box box-info'>
@@ -34,7 +34,7 @@
                 <h3 class='box-title'>Home Page Center Text</h3>
             </div>
             <div class='box-body pad'>
-                <textarea id="editor2" name="columncenter" rows="10" cols="80"></textarea>
+                <textarea id="editor2" name="columncenter" rows="10" cols="80" class="summernote"></textarea>
             </div>
         </div>
         <div class='box box-info'>
@@ -42,7 +42,7 @@
                 <h3 class='box-title'>Home Page Right Side Text</h3>
             </div>
             <div class='box-body pad'>
-                <textarea id="editor3" name="columnright" rows="10" cols="80"></textarea>
+                <textarea id="editor3" name="columnright" rows="10" cols="80" class="summernote"></textarea>
             </div>
         </div>
         <input type="submit" name="submit" value="submit">

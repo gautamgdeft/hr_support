@@ -26,7 +26,18 @@
                             <a href="{{route('adminhomepage')}}">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
-                        </li> 
+                        </li>
+
+                    <!-- Front end view -->
+                        <!-- <li class="{{ Request::is('home') ? 'active' : '' }}" id="fronthome">
+                            <a href="{{route('home')}}">
+                                <i class="fa fa-th"></i> <span>Homepage</span>
+                            </a>
+                        </li> -->
+                    <!-- Front end view ends-->
+
+
+
 
                         <!--Edit profile Section-->
                         <li class="{{ Request::is('user-profile') ? 'active' : '' }}" id="home">

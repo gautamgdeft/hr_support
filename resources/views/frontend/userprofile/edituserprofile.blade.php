@@ -15,7 +15,7 @@
           <form name="editdetails" method="Post" action="{{ route('front.update.user') }}">
             {{ csrf_field() }}
 
-              <div class="panel-body">
+              <div class="panel-body edit-user-details-page">
                 <div class="form-group">
                   <h1>User Profile Details</h1>
                 </div>
@@ -25,15 +25,16 @@
                   <input type="text" value="{{ Auth::user()->name }}" name="name" class="form-control">
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>Email: </label>
                   <input type="email" value="{{ Auth::user()->email }}" name="email" class="form-control">
-                </div> 
+                </div> --> 
 
                 <input type="submit" class="submitting" name="submit" value="Submit" class="form-control">
 
-                <a class="button" href="{{route('front.view.user')}}">Back</a>
-                <a href="{{route('front.password.edit')}}">Change Password</a>
+                
+                <a class="button" href="{{route('front.password.edit')}}">Change Password</a>
+                <!-- <a class="button" href="{{route('front.view.user')}}">Back</a> -->
               </div>
           </form>
         </div>
