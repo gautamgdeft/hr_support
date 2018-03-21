@@ -23,12 +23,18 @@
                   </div>
                   <div class="col-sm-6">
                      <div class="led_sec">
-                        <img src="images/led.png" alt="">
+                        
                         <div class="video_sec">
-                           <a href="javascript:void(0)" data-toggle="modal" data-target="#myModal">
+                           <a href="javascript:void(0)">
                            <img src="images/play-button.png" alt=""></a>
+
+                           <div class="main-video"> 
+                           <video width="100%" height="337" class="video_cstm" controls >
+                              <source src="/images/{!!html_entity_decode($home[0]['columncenter'])!!}" allow="autoplay" type="video/mp4">  
+                           </video>
+                           </div>
                         </div>
-                     </div>
+                    </div>
                   </div>
                   <div class="col-sm-3">
                      <div class="statement_sec pull-right">
@@ -73,15 +79,29 @@
                   <div class="modal-dialog">
                      <!-- Modal content-->
                      <div class="modal-content">
-                        <!-- <div class="modal-header">
-                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Modal Header</h4>
-                        </div> -->
+                        <!--<div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Modal Header</h4>
+                           </div> -->
                         <div class="modal-body videoyoutube">
-                           <iframe width="100%" height="315" src="{{strip_tags($home[0]['columncenter'])}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                           
+                        <!--<iframe width="100%" height="315" src="{{strip_tags($home[0]['columncenter'])}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                           <video width="100%" height="337" class="video_cstm" controls >
+                              <source src="/images/{!!html_entity_decode($home[0]['columncenter'])!!}" allow="autoplay" type="video/mp4">  
+                           </video>
                            <!-- {!!html_entity_decode($home[0]['columncenter'])!!}
                            {{strip_tags($home[0]['columncenter'])}} -->
+                              <script>   
+                            
+
+                              $('.video_sec a').on('click', function () {
+                                $(this).hide(); 
+                                $('.video_cstm')[0].play();
+
+                              })
+                              $('#myModal').on('hidden.bs.modal', function () {
+                                $('.video_cstm')[0].pause();
+                              })
+                              </script>
 
                         </div>
                      </div>

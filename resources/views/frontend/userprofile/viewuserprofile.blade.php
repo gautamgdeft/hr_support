@@ -12,12 +12,19 @@
           </div>
             <div class="left-office-history">
               <div class="hr-speaking mCustomScrollbar">
+              @if(session('success'))
+                              <div class="alert-box success done">
+                                  <h1><small>{{ Session('success') }}</small></h1>
+                              </div>
+                            @endif
                 <form name="editdetails" method="Post" action="{{ route('front.update.user') }}">
                   {{ csrf_field() }}
                   <div class="panel-body edit-profile-panel">
+                          
                            <div class="form-group edit-pro-title">
                                <h1>User Profile Details</h1>
                            </div>
+
 
                            <div class="form-group">
                                <h2><b>Name:</b> <span>{{ Auth::user()->name }} </span></h2>
@@ -30,6 +37,7 @@
                           
                            <a class="button" href="{{route('front.edit.user')}}">Edit User
                            </a>
+                           <a class="button" href="{{route('front.password.edit')}}">Change Password</a>
                             <a class="button" href="{{route('home')}}">Close</a>
                   </div>
                 </form>

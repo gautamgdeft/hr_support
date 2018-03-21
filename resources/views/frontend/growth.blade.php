@@ -16,7 +16,8 @@
                      <div class="hr-speaking mCustomScrollbar">
                         <div class="content">
                            <ul class="number">
-                              <li>Growth in Flatworld is a 2 step process across various stages of your career. We look at skill development and process continuity to evaluate and recommend best performers of our team for higher roles and designations.  
+                           {!!html_entity_decode($growthtext[0]['growth_text'])!!}
+                              <!-- <li>Growth in Flatworld is a 2 step process across various stages of your career. We look at skill development and process continuity to evaluate and recommend best performers of our team for higher roles and designations.  
                               </li>
                               <li>There are Managers who have started their careers as plain editors, designers, engineers, but have proven skill development year on year and accumulated leadership and communication skills over the years and hence was internally promoted
                               </li>
@@ -29,7 +30,7 @@
                               <li>Every honest employee would love to know how he fares at the workplace; it’s almost a hidden habit to check on scores or feedback.
                               </li>
                               <li>At Flatworld we have devised ways that can ensure correct and genuine feedback is given based on merit, achievement and other factors that celebrate your attitude, acknowledge your skill & knowledge and encourage your quality etc. Do meet your managers for a clear step by step process on how regular performance reviews are done. Great feedback is the cornerstone of happy customers and Growing Companies.</li>
-                              <li>Most reviews usually end in a Salary increment, incentive or other perks. However in some cases we also celebrate great reviews with certificates and public acknowledgements.</li>
+                              <li>Most reviews usually end in a Salary increment, incentive or other perks. However in some cases we also celebrate great reviews with certificates and public acknowledgements.</li> -->
                            </ul>
                         </div>
                      </div>

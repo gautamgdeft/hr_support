@@ -16,7 +16,7 @@
 // });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Auth::routes();
@@ -79,18 +79,66 @@ Route:: get('/edit-user-password','backendController@userpasswordchange')->name(
 Route:: post('/edit-user-password','backendController@userpasswordupdate')->name('user.password.update');
 /*----------------user profile related routes ended--------------------------*/
 
-/*---------------Homepage related routes-------------------------------------*/
+/*---------------Home page related routes-------------------------------------*/
 Route:: get('/home-section','backendController@homesection')->name('homesection');
 //Save Homepage
 Route:: post('/home-section','backendController@homeseccontent')->name('homeseccontent');
 //Update Homepage
 Route:: post('/home-section-update','backendController@homesecupdate')->name('homesecupdate');
-/*----------------Homepage related routes ended-------------------------------*/
+/*----------------Home page related routes ended-------------------------------*/
 
-/*---------------Historypage related routes-----------------------------------*/
-Route:: get('/History-section','backendController@historysection')->name('history.section');
-//Save Homepage
-Route:: post('/History-edit','backendController@historyseccontent')->name('history.edit');
-//Update Homepage
-Route:: post('/History-update','backendController@historysecupdate')->name('history.update');
-/*----------------Historypage related routes ended-----------------------------*/
+/*---------------History page related routes-----------------------------------*/
+Route:: get('/history-section','backendController@historysection')->name('history.section');
+//Save historypage
+Route:: post('/history-edit','backendController@historyseccontent')->name('history.edit');
+//Update historypage
+Route:: post('/history-update','backendController@historysecupdate')->name('history.update');
+/*----------------History page related routes ended-----------------------------*/
+
+/*---------------Qualtiy page related routes-----------------------------------*/
+Route:: get('/quality-section','backendController@qualitysection')->name('quality.section');
+//Save qualitypage
+Route:: post('/quality-edit','backendController@qualityseccontent')->name('quality.edit');
+//Update qualitypage
+Route:: post('/quality-update','backendController@qualitysecupdate')->name('quality.update');
+/*----------------Quality page related routes ended-----------------------------*/
+
+/*---------------Life page related routes-----------------------------------*/
+Route:: get('/life-section','backendController@lifesection')->name('life.section');
+//Save lifepage
+Route:: post('/life-edit','backendController@lifeseccontent')->name('life.edit');
+//Update lifepage
+Route:: post('/life-update','backendController@lifesecupdate')->name('life.update');
+/*----------------Life page related routes ended-----------------------------*/
+
+/*---------------Work page related routes-----------------------------------*/
+Route:: get('/work-section','backendController@worksection')->name('work.section');
+//Save workpage
+Route:: post('/work-edit','backendController@workseccontent')->name('work.edit');
+//Update workpage
+Route:: post('/work-update','backendController@worksecupdate')->name('work.update');
+/*----------------work page related routes ended-----------------------------*/
+
+/*---------------Employment page related routes-----------------------------------*/
+Route:: get('/employment-section','backendController@employmentsection')->name('employment.section');
+//Save employmentpage
+Route:: post('/employment-edit','backendController@employmentseccontent')->name('employment.edit');
+//Update employmentpage
+Route:: post('/employment-update','backendController@employmentsecupdate')->name('employment.update');
+/*----------------Employment page related routes ended-----------------------------*/
+
+/*---------------Work vs Life page related routes-----------------------------------*/
+Route:: get('/worklife-section','backendController@worklifesection')->name('worklife.section');
+//Save work vs life page
+Route:: post('/worklife-edit','backendController@worklifeseccontent')->name('worklife.edit');
+//Update work vs life page
+Route:: post('/worklife-update','backendController@worklifesecupdate')->name('worklife.update');
+/*----------------Work vs Life page related routes ended-----------------------------*/
+
+/*---------------Growth page related routes-----------------------------------*/
+Route:: get('/growth-section','backendController@growthsection')->name('growth.section');
+//Save Growth page
+Route:: post('/growth-edit','backendController@growthseccontent')->name('growth.edit');
+//Update Growth page
+Route:: post('/growth-update','backendController@growthsecupdate')->name('growth.update');
+/*---------------Growth page related routes ended-----------------------------*/

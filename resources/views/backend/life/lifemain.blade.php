@@ -13,32 +13,25 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                History Section
+                Life Section
                 <small>Control panel</small>
             </h1>
         </section>
 <!-- Main content -->
 <section class="content">
-    <form method="POST" action="{{ route('history.update') }}">
+    <form method="POST" action="{{ route('life.edit') }}">
         {{ csrf_field() }}
-       <div class='box box-info'>
+        <div class='box box-info'>
             <div class='box-header'>
-                <h3 class='box-title'>History Page Content</h3>
-            </div>
-            <div class="box-body pad">
-                <input type="hidden" name="history_id" value="{!!html_entity_decode($historydata[0]['id'])!!}">
+                <h3 class='box-title'>Life Page Content</h3>
             </div>
             <div class='box-body pad'>
-                <textarea id="editor1" name="historytext" rows="10" cols="80" class="summernote">{!!html_entity_decode($historydata[0]['historytext'])!!}</textarea>
+                <textarea id="editor1" name="life_text" rows="10" cols="80" class="summernote"></textarea>
             </div>
-
-            <!-- <div class='box-body pad'>
-                <textarea id="editor1" name="historytext" rows="10" cols="80" class="summernote">{!!html_entity_decode($historydata[0]['historytext'])!!}</textarea>
-            </div> -->
-
         </div>
-        <input type="submit" name="submit" value="Update">
+        <input type="submit" name="submit" value="submit">
     </form>
 </section>
 <!-- CK Editor -->               
 @endsection
+ 

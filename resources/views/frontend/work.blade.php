@@ -15,8 +15,9 @@
                   <div class="left-office-history">
                      <div class="hr-speaking mCustomScrollbar">
                         <div class="content">
-                           <ul class="number">
-                              <li>Do unto others what you want them to do unto you. Respect, empathise, support, cooperate, partner are the operative part of your daily life. Smile and spread the cheer, you spend close to 160+ hours right here @ work every month.
+                          <ul class="number">
+                           {!!html_entity_decode($worktext[0]['work_text'])!!}
+                              <!-- <li>Do unto others what you want them to do unto you. Respect, empathise, support, cooperate, partner are the operative part of your daily life. Smile and spread the cheer, you spend close to 160+ hours right here @ work every month.
                               </li>
                               <li>Clothes make the man, so they say! Dressed for work means you have free collars or rolled up sleeves or for others a fancy blazer and spanking white shirts /trousers.  Anything short and you may end up as the odd one out. We do have special days to celebrate India and its colourful culture.
                               </li>
@@ -31,7 +32,7 @@
                               <li>Employees must be alert and aware of any potential dangers to themselves or their co-workers. We encourage each employee to take every precaution to ensure that your surroundings are safe and secure. Guard personal belongings and company property. Visitors should be escorted at all times. Report any suspicious activity to a supervisor immediately.
                               </li>
                               <li>In the event of an emergency, dial 9 from the Phone Extension that is available immediately. If you hear a fire alarm or other emergency alert system, proceed quickly and calmly to the nearest exit / Assembly Point. Kindly use the STAIRS only. Once the building has been evacuated, HR / Admin may authorize employees to re-enter after confirming the attendance / Head Count.
-                              </li>
+                              </li> -->
                            </ul>
                         </div>
                      </div>

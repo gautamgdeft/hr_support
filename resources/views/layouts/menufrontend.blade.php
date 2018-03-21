@@ -15,28 +15,43 @@
                   <li><a href="{{ route('login') }}">Login</a></li>
                   <li><a href="{{ route('register') }}">Register</a></li>
                @else
-                  <li>
-                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();">
-                              {{ Auth::user()->name }} / Logout
-                     </a>
-                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              {{ csrf_field() }}
-                     </form>
-                  </li>
-
-                  @if(Auth::user()->Role == 'admin')
+               
+                  <li class="sub-menus user-name-menu"> <a class="anchor-no-css" href="#">{{ Auth::user()->name }} </a>
+                     <ul class="inner-user-menu">
+                      @if(Auth::user()->Role == 'admin')
                      <li><a href="{{route('adminhomepage')}}">Dashboard</a></li>
                      @else
                      <li><a href="{{route('front.view.user')}}">Edit Profile</a></li>
                   @endif
-
+                    <li> <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                              Logout
+                     </a></li>
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              {{ csrf_field() }}
+                     </form>
+                     </ul>
+                  </li>
 
                @endguest
-            </ul>            
+            </ul> 
+
+            <script>
+            $(document).ready(function(){
+               jQuery(".user-name-menu").click(function(){
+                  jQuery(".inner-user-menu").toggle();
+                  //alert('786');
+               });
+
+               $('.main-wrap').click(function(){  
+                  $('.inner-user-menu').hide();
+               });
+            });
+            </script>           
          </div>
          <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
+            <li><a href="{{route('home')}}">Home</a></li>
                <li><a href="{{route('history')}}">History@flatworld</a></li>
                <li><a href="{{route('quality')}}">Quality@flatworld</a></li>
                <li><a href="{{route('life')}}">life@flatworld</a></li>

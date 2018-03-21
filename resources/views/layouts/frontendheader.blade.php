@@ -26,6 +26,9 @@
       <link href="css/style.css" rel="stylesheet">
       <link href="css/font-awesome.min.css" rel="stylesheet">
       <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
+
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+              <script src="/js/validator.js" type="text/javascript"></script>
    </head>
         @yield('content')
 </html>

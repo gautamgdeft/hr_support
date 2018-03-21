@@ -9,6 +9,12 @@ use Session;
 use Hash;
 use App\Home;
 use App\History;
+use App\Quality;
+use App\Life;
+use App\Work;
+use App\Employment;
+use App\Workvslife;
+use App\Growth;
 
 class forntendController extends Controller
 {
@@ -16,6 +22,7 @@ class forntendController extends Controller
 	public function __construct()
 	{
 		//$this->middleware('checkrole:user');
+        $this->middleware('auth');
 		$this->middleware('checkrole:user');
 	}
 
@@ -35,38 +42,41 @@ class forntendController extends Controller
 
 	public function quality (){
 
-		return view ('frontend.quality');
+        $qualitytext = Quality::all();
+		return view ('frontend.quality', compact('qualitytext'));
 
 	}
 
 	public function life (){
 
-		return view ('frontend.life');
+         $lifetext = Life::all();
+		return view ('frontend.life', compact('lifetext'));
 
 	}
 
 	public function work (){
 
-		return view ('frontend.work');
+        $worktext = Work::all();
+		return view ('frontend.work', compact('worktext'));
 
 	}
 
 	public function employment (){
-
-		return view ('frontend.employment');
+        $employmenttext = Employment::all();
+		return view ('frontend.employment', compact('employmenttext'));
 
 	}
 
 	public function workvslife (){
-
-		return view ('frontend.workvslife');
+        $worklifetext = Workvslife::all();
+		return view ('frontend.workvslife', compact('worklifetext'));
 
 	}
 
 
 	public function growth (){
-
-		return view ('frontend.growth');
+        $growthtext = Growth::all();
+		return view ('frontend.growth', compact('growthtext'));
 
 	}
 
@@ -108,11 +118,34 @@ class forntendController extends Controller
     public function updateuserprofile(Request $request){
 
         $user = Auth::user();
-        $user->name = $request->input('name');
-            if($user->email !== $request->input('email'))
-            {
-                $user->email = $request->input('email');
-            }
+
+        $namecount = strlen($request->input('name'));
+        //dd($namecount);
+    if($request->input('name') == " "){
+        return redirect()->route('front.edit.user')->with('usernamefailed' , 'Name Should not be empty'); 
+
+    }else{
+        // if($namecount <= "15"){
+
+            // if($namecount > "1"){ 
+                $user->name = $request->input('name');
+            // }else{
+
+            //     return redirect()->route('front.edit.user')->with('usernamefailed' , 'Name should be  atleast "2" characters Long'); 
+            //  }
+
+
+
+
+            
+        // }else{
+        //     return redirect()->route('front.edit.user')->with('usernamefailed' , 'Name should be "15" characters only'); 
+        // }
+    }
+            // if($user->email !== $request->input('email'))
+            // {
+            //     $user->email = $request->input('email');
+            // }
        	$user->save();
 
         Session::flash('success', 'Your profile updated');
@@ -144,8 +177,16 @@ class forntendController extends Controller
             }else{
 
                 if($request->input('password') == $request->input('confirmpassword'))
-                {
-                    $user->password = Hash::make($request->input('password'));
+                {                    
+                    $passcount = strlen($request->input('password'));
+                    if($passcount < "6" || $passcount >"10"){
+                        return redirect()->route('front.password.edit')->with('passsfailed' , 'password Should be more than "4" character and upto "10" characters');
+
+                    }else{
+                         $user->password = Hash::make($request->input('password'));
+
+                    }
+
                 }else{
                  //Session::flash('failed','Password not matched');
                  return redirect()->route('front.password.edit')->with('failed' , 'Your confirm password does not matched');   

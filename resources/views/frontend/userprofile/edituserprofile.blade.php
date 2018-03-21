@@ -20,9 +20,15 @@
                   <h1>User Profile Details</h1>
                 </div>
 
+                    @if(session('usernamefailed'))
+                      <div class="alert-box success">
+                          <h1><small>{{ Session('usernamefailed') }}</small></h1>
+                      </div>
+                    @endif
+
                 <div class="form-group">
                   <label>Name: </label>
-                  <input type="text" value="{{ Auth::user()->name }}" name="name" class="form-control">
+                  <input type="text" value="{{ Auth::user()->name }}" name="name" class="form-control" min="0" max="5" required="required">
                 </div>
 
                 <!-- <div class="form-group">
@@ -34,7 +40,7 @@
 
                 
                 <a class="button" href="{{route('front.password.edit')}}">Change Password</a>
-                <!-- <a class="button" href="{{route('front.view.user')}}">Back</a> -->
+                <a class="button" href="{{route('front.view.user')}}">Back</a>
               </div>
           </form>
         </div>

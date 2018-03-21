@@ -873,6 +873,36 @@
      background: #c0c0c0 !important;
      border: 3px solid #626564 !important;
 }
+
+
+
+
+/*== 180321 ==*/
+.led_sec { display: block;position: relative; padding: 0;
+    position: relative;width: 555px; height: 314px; background: url(../images/led.png);
+    padding-top: 50px;    background-position: center 0; overflow: hidden;}
+.led_sec .video_sec{ margin-top:33px; }    
+
+.main-video{ position: absolute; top: 0; z-index: 99; background: #000; }
+.main-video video{ height:271px; }
+
+.led_sec .video_sec a {
+    max-width: 100%; min-height: 100%;  margin: auto;
+    width: 100%;    display: inline-block;    position: absolute;
+    left: 0;    right: 0;   margin: auto;     top: 0; 
+     transform: translateY(0); 
+    background: #61f956;    z-index: 999;    width: 100%;   top: 0;}
+
+.led_sec .video_sec a img {
+    width: 119px;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    left: 40%;
+}
+
+
+
 /***********************************/
 /***********************************/
 /*** media query ***/
@@ -896,6 +926,9 @@
      .work-vs-life-page p{
          font-weight: 600;
     } */
+header nav .navbar-nav li a{ padding: 10px 4px; }
+header nav .navbar-nav li a.anchor-no-css{ padding: 3px 5px; }
+li.sub-menus.user-name-menu{ width:80px; }
 }
  @media (min-width:1920px) {
      .navbar-header{
@@ -1523,6 +1556,62 @@ header nav .navbar-nav li a{font-size: 10px;}
     padding:0px;
 }
 
+/*20-03-18*/
+li.sub-menus > ul {
+    display:  none;
+    position:  absolute;
+    bottom: -62px;
+    width: 100px;
+    left: 0px;
+}
+
+li.sub-menus ul {
+    /*display:  block;*/
+    background: #fff;
+
+}
+
+
+li.sub-menus {
+    position:  relative;
+    color:#b11730;
+    padding: 6px 10px;
+    border: 1px solid #b11730;
+    border-radius: 10px;
+}
+li.sub-menus ul li a {
+    background: none;
+    color:  #000;
+}
+li.sub-menus:hover, li.sub-menus ul li a:hover{color: #ae162f; background: none;}
+li.sub-menus:hover {border-color:#ae162f;}
+.alert-box.success h1
+ small {
+    font-size: 14px;
+    color:  #f00;
+}
+.alert-box.success h1{text-align:center;}
+.alert-box.success.done h1 small{color: #188218;}
+
+/*21-03-18*/
+header .navbar .container-fluid {
+    padding:  0px 5px;
+}
+li.sub-menus.user-name-menu{width: 119px; background: rgba(255,255,255,0.6);
+    text-align: center;}
+
+header nav .navbar-nav li a.anchor-no-css {
+    background: transparent;
+    color: red;
+    padding: 0px 5px;
+}
+
+
+
+ @media ( min-width:1600px ) { 
+li.sub-menus.user-name-menu{width: 80px;}
+
+}
 
 
 

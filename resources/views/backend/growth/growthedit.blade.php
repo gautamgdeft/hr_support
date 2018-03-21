@@ -13,28 +13,24 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                History Section
+                Growth Section
                 <small>Control panel</small>
             </h1>
         </section>
 <!-- Main content -->
 <section class="content">
-    <form method="POST" action="{{ route('history.update') }}">
+    <form method="POST" action="{{ route('growth.update') }}">
         {{ csrf_field() }}
        <div class='box box-info'>
             <div class='box-header'>
-                <h3 class='box-title'>History Page Content</h3>
+                <h3 class='box-title'>Growth Page Content</h3>
             </div>
             <div class="box-body pad">
-                <input type="hidden" name="history_id" value="{!!html_entity_decode($historydata[0]['id'])!!}">
+                <input type="hidden" name="growth_id" value="{!!html_entity_decode($growthdata[0]['id'])!!}">
             </div>
             <div class='box-body pad'>
-                <textarea id="editor1" name="historytext" rows="10" cols="80" class="summernote">{!!html_entity_decode($historydata[0]['historytext'])!!}</textarea>
+                <textarea id="editor1" name="growth_text" rows="10" cols="80" class="summernote">{!!html_entity_decode($growthdata[0]['growth_text'])!!}</textarea>
             </div>
-
-            <!-- <div class='box-body pad'>
-                <textarea id="editor1" name="historytext" rows="10" cols="80" class="summernote">{!!html_entity_decode($historydata[0]['historytext'])!!}</textarea>
-            </div> -->
 
         </div>
         <input type="submit" name="submit" value="Update">
@@ -42,3 +38,4 @@
 </section>
 <!-- CK Editor -->               
 @endsection
+ 

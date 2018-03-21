@@ -31,9 +31,10 @@
                     <!-- <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a> -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand cstm-logo" href="{{ url('/') }}">
                         <!-- {{ config('app.name', 'Laravel') }} -->
-                        Flat World
+                        
+                        <img class="" src="/images/fws-logo.png" alt=""/>
                     </a>
                 </div>
 

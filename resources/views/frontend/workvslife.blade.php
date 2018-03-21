@@ -12,8 +12,8 @@
                   <div class="left-office-history">
                      <div class="hr-speaking mCustomScrollbar">
                         <div class="content">
-                           
-                           <p>We celebrate our relationship by respecting each other’s time. If all employees turn up on time, imagine the increase in productivity and stress free lives everyone will experience. Absenteeism is a habit you are discouraged to bring into this company. It should always be “LEAVE WITH A CAUSE’, stay at home for a reason. We also love for you to use your swanky phones to let your leaders know if you are sick, in an emergency or family issues and we honour and support our teams through the tough times.</p>
+                           {!!html_entity_decode($worklifetext[0]['workvslife_text'])!!}
+                           <!-- <p>We celebrate our relationship by respecting each other’s time. If all employees turn up on time, imagine the increase in productivity and stress free lives everyone will experience. Absenteeism is a habit you are discouraged to bring into this company. It should always be “LEAVE WITH A CAUSE’, stay at home for a reason. We also love for you to use your swanky phones to let your leaders know if you are sick, in an emergency or family issues and we honour and support our teams through the tough times.</p>
 
                            <p><b>Here is the math for how you can balance work and life.</b></p> 
 
@@ -33,7 +33,7 @@
 
                            <p><b>Exam Leave :</b> Study whilst at work is a great task in itself. We offer incentives of Rs.5000 and a 10 day Study holiday period to encourage those who want to skill themselves up the ladder. Do take prior approvals and suggestions on type of courses from your mentors! HR will list out a plan for your education and growth</p> 
 
-                           <p><b>Leave of Absence:</b> Life has unplanned situations and those call for extreme measures. We acknowledge genuine claims and allow for absence from work but will classify those holidays as ‘Unpaid’ so as to bear parity with all employees. If the period of absence is long, then continuation of employee benefits may be reviewed as the law of the land so decides.</p>
+                           <p><b>Leave of Absence:</b> Life has unplanned situations and those call for extreme measures. We acknowledge genuine claims and allow for absence from work but will classify those holidays as ‘Unpaid’ so as to bear parity with all employees. If the period of absence is long, then continuation of employee benefits may be reviewed as the law of the land so decides.</p> -->
                         </div>
                      </div>
                      <!-- <div class="talking_vector">

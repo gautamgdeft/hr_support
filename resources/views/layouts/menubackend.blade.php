@@ -20,6 +20,7 @@
                         </div>
                     </form>
                     <!-- /.search form -->
+                    
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="dash-menu {{ Request::is('LaraAdmin') ? 'active' : '' }}" id="dash">
@@ -27,17 +28,6 @@
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-
-                    <!-- Front end view -->
-                        <!-- <li class="{{ Request::is('home') ? 'active' : '' }}" id="fronthome">
-                            <a href="{{route('home')}}">
-                                <i class="fa fa-th"></i> <span>Homepage</span>
-                            </a>
-                        </li> -->
-                    <!-- Front end view ends-->
-
-
-
 
                         <!--Edit profile Section-->
                         <li class="{{ Request::is('user-profile') ? 'active' : '' }}" id="home">
@@ -47,19 +37,71 @@
                         </li>
                         <!--Edit profile section ends -->
 
-                        
+                        <!-- Main Page section -->
 
+                        <!-- Home Page -->
                         <li class="{{ Request::is('home-section') ? 'active' : '' }}" id="home">
                             <a href="{{route('homesection')}}">
                                 <i class="fa fa-th"></i> <span>Home Page</span>
                             </a>
                         </li>
-
-                         <li class="{{ Request::is('history') ? 'active' : '' }}" id="home">
+                        <!-- History Page -->
+                        <li class="{{ Request::is('history') ? 'active' : '' }}" id="history">
                             <a href="{{route('history.section')}}">
                                 <i class="fa fa-th"></i> <span>History Page</span>
                             </a>
                         </li>
+                        <!-- Quality Page -->
+                        <li class="{{ Request::is('quality') ? 'active' : '' }}" id="quality">
+                            <a href="{{route('quality.section')}}">
+                                <i class="fa fa-th"></i> <span>Quality Page</span>
+                            </a>
+                        </li>
+                        <!-- Life Page -->
+                        <li class="{{ Request::is('life') ? 'active' : '' }}" id="life">
+                            <a href="{{route('life.section')}}">
+                                <i class="fa fa-th"></i> <span>Life Page</span>
+                            </a>
+                        </li>
+                        <!-- Work Page -->
+                        <li class="{{ Request::is('work') ? 'active' : '' }}" id="work">
+                            <a href="{{route('work.section')}}">
+                                <i class="fa fa-th"></i> <span>Work Page</span>
+                            </a>
+                        </li>
+                        <!-- Employment Page -->
+                        <li class="{{ Request::is('employment') ? 'active' : '' }}" id="employment">
+                            <a href="{{route('employment.section')}}">
+                                <i class="fa fa-th"></i> <span>Employment Page</span>
+                            </a>
+                        </li>
+                        <!-- Work vs Life Page -->
+                        <li class="{{ Request::is('workvslife') ? 'active' : '' }}" id="workvslife">
+                            <a href="{{route('worklife.section')}}">
+                                <i class="fa fa-th"></i> <span>Work-vs-life Page</span>
+                            </a>
+                        </li>
+                         <!-- Growth Page -->
+                        <li class="{{ Request::is('growth') ? 'active' : '' }}" id="growth">
+                            <a href="{{route('growth.section')}}">
+                                <i class="fa fa-th"></i> <span>Growth Page</span>
+                            </a>
+                        </li>
+                        <!-- Main page section ended -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                        <!--  <li>
                             <a href="pages/widgets.html">
                                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
@@ -108,7 +150,7 @@
                                 <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> Advanced Elements</a></li>
                                 <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Editors</a></li>
                             </ul> -->
-                        </li>
+                       <!--  </li> -->
                         <!-- <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-table"></i> <span>Tables</span>

@@ -15,7 +15,9 @@
                            <img src="images/quality-policy.png" alt="">
                         </div>
                         <div class="content">
-                           <p>Flatworld Solutions (P) Ltd aims to achieve and endeavours to continuously enhance customer satisfaction by
+                        {!!html_entity_decode($qualitytext[0]['quality_text'])!!}
+
+                           <!-- <p>Flatworld Solutions (P) Ltd aims to achieve and endeavours to continuously enhance customer satisfaction by
                            </p>
                            <ol type="number">
                               <li>Providing quality, timely and cost-effective solutions in the ITES domain. <i>( which means we play the game hard, drive excellence  with reduced costs for our customers)</i>
@@ -28,7 +30,8 @@
                               </li>
                            </ol>
                            <p>Do connect with your Business Head or Operations Manager to know How the ISO policy affects your area of work and enrol for a training session as soon as you join the team. You will be surprised at how the process ensures quality adherence at your desk.
-                           </p>
+                           </p> -->
+                           
                         </div>
                      </div>
                   </div>

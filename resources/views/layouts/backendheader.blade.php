@@ -101,6 +101,9 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
         <!-- <script src="backend/js/plugins/morris/morris.min.js" type="text/javascript"></script> -->
         <!-- Sparkline -->
+
+        <script src="/js/validator.js" type="text/javascript"></script>
+
         <script src="backend/js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
         <!-- jvectormap -->
         <script src="backend/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>

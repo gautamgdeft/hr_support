@@ -19,7 +19,7 @@
         </section>
 <!-- Main content -->
 <section class="content">
-    <form method="POST" action="{{ route('homeseccontent') }}">
+    <form method="POST" action="{{ route('homeseccontent') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class='box box-info'>
             <div class='box-header'>
@@ -34,7 +34,7 @@
                 <h3 class='box-title'>Home Page Center Text</h3>
             </div>
             <div class='box-body pad'>
-                <textarea id="editor2" name="columncenter" rows="10" cols="80" class="summernote"></textarea>
+                <input type="file" name="columncenter" id="video">
             </div>
         </div>
         <div class='box box-info'>

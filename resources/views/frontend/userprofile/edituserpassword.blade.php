@@ -29,6 +29,12 @@
                         <h1><small>{{ Session('samepassfailed') }}</small></h1>
                     </div>
                     @endif
+                     @if(session('passsfailed'))
+                    <div class="alert-box success">
+                        <h1><small>{{ Session('passsfailed') }}</small></h1>
+                    </div>
+                    @endif
+                    
                   <!--Flash messgaes ends-->
                 <form name="editdetails" method="Post" action="{{ route('front.password.update') }}">
                 {{ csrf_field() }}

@@ -13,6 +13,7 @@
                      <div class="employment-content">
                         <div class="hr-speaking mCustomScrollbar">
                            <div class="content">
+                             {!!html_entity_decode($employmenttext[0]['employment_text'])!!}
                               <!-- <p>Like most emerging businesses, your company has slotted our 
                                  core teams into rookie (probationers), Regulars (permanent) 
                                  and Professionals (consultants). All of these team members 
@@ -45,7 +46,7 @@
                               </p> -->
 
 
-                              <p>Like most emerging businesses, your company has slotted our core teams into rookie (probationers), Regulars (permanent) and Professionals (consultants). All of these team members are critical to the wellbeing of the company. Its takes for much talent and many experienced hands to ensure a project succeeds and a client is made happy. <p>
+                              <!-- <p>Like most emerging businesses, your company has slotted our core teams into rookie (probationers), Regulars (permanent) and Professionals (consultants). All of these team members are critical to the wellbeing of the company. Its takes for much talent and many experienced hands to ensure a project succeeds and a client is made happy. <p>
 
                               <p><b>Appointment:</b></p>
 
@@ -95,7 +96,7 @@
                                   <li>- to participate in an exit interview  and let us know how we could have been better employers</li>
                                   </ul>
 
-                              <p>Flatworld will ensure all statutory payments are made, all salaries are credited and a letter of Work experience issued based on last done review.</p>
+                              <p>Flatworld will ensure all statutory payments are made, all salaries are credited and a letter of Work experience issued based on last done review.</p> -->
                            </div>
                         </div>
                      </div>

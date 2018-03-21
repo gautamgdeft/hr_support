@@ -5,12 +5,32 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Home;
 use App\History;
+use App\Quality;
+use App\Life;
+use App\Work;
+use App\Employment;
+use App\Workvslife;
+use App\Growth;
 use Session;
 use Auth;
 use Hash;
 
 class backendController extends Controller
 {
+        public function __construct()
+        {
+            $this->middleware('auth');
+            $this->middleware('checkrole:admin');
+        }
+  
+    // public function __construct()
+    //     {
+    //       //$this->middleware('checkrole:user');
+    //         $this->middleware('checkrole:admin');
+    //         //$this->middleware('Auth');
+    //     }
+
+
 
 /*dashboard main page section */
     public function adminhomepage(){
@@ -125,11 +145,15 @@ class backendController extends Controller
         public function homesecupdate(Request $request){
 
             $homesecdata  = Home::find($request->home_id);
-            
-          
-
+            //dd($request);
+            $imageName = time().'.'.request()->columncenter->getClientOriginalExtension();
+            request()->columncenter->move(public_path('images'), $imageName);
             $homesecdata->update($request->all());
 
+            if ($request->hasFile('columncenter')) {
+            $homesecdata->columncenter = $imageName;
+            $homesecdata->save();
+            }
 
             return redirect()->route('homesection')->with('homesuccess' , 'update successfully'); 
 
@@ -178,5 +202,208 @@ class backendController extends Controller
 /*-----------------------------------------------------------------------*/
 
 
+
+ /*dashboard Quality page section */
+
+        public function qualitysection(){
+            $qualitydata = Quality::all();
+            if(!empty($qualitydata[0]['id'])){
+                return view('backend.quality.qualityedit', compact('qualitydata'));
+            } 
+            else{
+                return view('backend.quality.qualitymain');
+            }
+        }
+
+    /*dashboard Quality page save data query*/
+
+        public function qualityseccontent (Request $request){
+                    $qualitytext = new Quality($request->all());
+                    $qualitytext->save();
+                    Session::flash('success', 'Page Content updated.');
+                    return redirect()->route('quality.section'); 
+        }
+
+    /*dashbiard QUality page update data query*/ 
+
+        public function qualitysecupdate(Request $request){
+            $qualitydata  = Quality::find($request->quality_id);
+            $qualitydata->update($request->all());
+            return redirect()->route('quality.section')->with('qualitysuccess' , 'update successfully'); 
+
+        }
+
+    /*dashboard Quality page section ends*/
+
+/*-----------------------------------------------------------------------*/
+
+/*dashboard life page section */
+
+        public function lifesection(){
+            $lifedata = Life::all();
+            if(!empty($lifedata[0]['id'])){
+                return view('backend.life.lifeedit', compact('lifedata'));
+            } 
+            else{
+                return view('backend.life.lifemain');
+            }
+        }
+
+    /*dashboard life page save data query*/
+
+        public function lifeseccontent (Request $request){
+                    $lifetext = new Life($request->all());
+                    $lifetext->save();
+                    Session::flash('success', 'Page Content updated.');
+                    return redirect()->route('life.section'); 
+        }
+
+    /*dashbiard life page update data query*/ 
+
+        public function lifesecupdate(Request $request){
+            $lifedata  = Life::find($request->life_id);
+            $lifedata->update($request->all());
+            return redirect()->route('life.section')->with('lifesuccess' , 'update successfully'); 
+
+        }
+
+    /*dashboard life page section ends*/
+
+/*-----------------------------------------------------------------------*/
+
+/*dashboard work page section */
+
+        public function worksection(){
+            $workdata = Work::all();
+            if(!empty($workdata[0]['id'])){
+                return view('backend.work.workedit', compact('workdata'));
+            } 
+            else{
+                return view('backend.work.workmain');
+            }
+        }
+
+    /*dashboard work page save data query*/
+
+        public function workseccontent (Request $request){
+                    $worktext = new Work($request->all());
+                    $worktext->save();
+                    Session::flash('success', 'Page Content updated.');
+                    return redirect()->route('work.section'); 
+        }
+
+    /*dashbiard work page update data query*/ 
+
+        public function worksecupdate(Request $request){
+            $workdata  = Work::find($request->work_id);
+            $workdata->update($request->all());
+            return redirect()->route('work.section')->with('worksuccess' , 'update successfully'); 
+
+        }
+
+    /*dashboard work page section ends*/
+
+/*-----------------------------------------------------------------------*/
+
+/*dashboard employment page section */
+
+        public function employmentsection(){
+            $employmentdata = Employment::all();
+            if(!empty($employmentdata[0]['id'])){
+                return view('backend.employment.employmentedit', compact('employmentdata'));
+            } 
+            else{
+                return view('backend.employment.employmentmain');
+            }
+        }
+
+    /*dashboard employment page save data query*/
+
+        public function employmentseccontent (Request $request){
+                    $employmenttext = new Employment($request->all());
+                    $employmenttext->save();
+                    Session::flash('success', 'Page Content updated.');
+                    return redirect()->route('employment.section'); 
+        }
+
+    /*dashbiard employment page update data query*/ 
+
+        public function employmentsecupdate(Request $request){
+            $employmentdata  = Employment::find($request->employment_id);
+            $employmentdata->update($request->all());
+            return redirect()->route('employment.section')->with('employmentsuccess' , 'update successfully'); 
+
+        }
+
+    /*dashboard employment page section ends*/
+
+/*-----------------------------------------------------------------------*/
+
+/*dashboard work vs life page section */
+
+        public function worklifesection(){
+            $workvslifedata = Workvslife::all();
+            if(!empty($workvslifedata[0]['id'])){
+                return view('backend.workvslife.workvslifeedit', compact('workvslifedata'));
+            } 
+            else{
+                return view('backend.workvslife.workvslifemain');
+            }
+        }
+
+    /*dashboard work vs life page save data query*/
+
+        public function worklifeseccontent (Request $request){
+                    $worklifetext = new Workvslife($request->all());
+                    $worklifetext->save();
+                    Session::flash('success', 'Page Content updated.');
+                    return redirect()->route('worklife.section'); 
+        }
+
+    /*dashbiard work vs life page update data query*/ 
+
+        public function worklifesecupdate(Request $request){
+            $worklifedata  = Workvslife::find($request->workvslife_id);
+            $worklifedata->update($request->all());
+            return redirect()->route('worklife.section')->with('worklifesuccess' , 'update successfully'); 
+
+        }
+
+    /*dashboard work vs life page section ends*/
+
+/*-----------------------------------------------------------------------*/
+
+/*dashboard Growth page section */
+
+        public function growthsection(){
+            $growthdata = Growth::all();
+            if(!empty($growthdata[0]['id'])){
+                return view('backend.growth.growthedit', compact('growthdata'));
+            } 
+            else{
+                return view('backend.growth.growthmain');
+            }
+        }
+
+    /*dashboard work vs life page save data query*/
+
+        public function growthseccontent (Request $request){
+                    $growthtext = new Growth($request->all());
+                    $growthtext->save();
+                    Session::flash('success', 'Page Content updated.');
+                    return redirect()->route('growth.section'); 
+        }
+
+    /*dashbiard work vs life page update data query*/ 
+
+        public function growthsecupdate(Request $request){
+            $growthdata  = Growth::find($request->growth_id);
+            $growthdata->update($request->all());
+            return redirect()->route('growth.section')->with('growth' , 'update successfully'); 
+        }
+
+    /*dashboard Growth page section ends*/
+
+/*-----------------------------------------------------------------------*/
 
 }
