@@ -19,6 +19,12 @@
         </section>
 <!-- Main content -->
 <section class="content">
+    @if(session('worklifesuccess'))
+        <div class="alert-box success">
+          <h1><small>{{ Session('worklifesuccess') }}</small></h1>
+        </div>
+    @endif
+
     <form method="POST" action="{{ route('worklife.update') }}">
         {{ csrf_field() }}
        <div class='box box-info'>

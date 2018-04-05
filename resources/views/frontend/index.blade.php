@@ -28,10 +28,13 @@
                            <a href="javascript:void(0)">
                            <img src="images/play-button.png" alt=""></a>
 
-                           <div class="main-video"> 
-                           <video width="100%" height="337" class="video_cstm" controls >
+                           <div class="main-video video-self" id="main-video-tag"> 
+                           <video width="100%" height="337" id="video" class="video_cstm" >
                               <source src="/images/{!!html_entity_decode($home[0]['columncenter'])!!}" allow="autoplay" type="video/mp4">  
                            </video>
+                           <!-- <video width="100%" height="337" id="myvideo" class="video_cstm afterglow" >
+                              <source src="/images/{!!html_entity_decode($home[0]['columncenter'])!!}" allow="autoplay" type="video/mp4">  
+                           </video> --> 
                            </div>
                         </div>
                     </div>
@@ -39,73 +42,74 @@
                   <div class="col-sm-3">
                      <div class="statement_sec pull-right">
                         <div class="content">
-                           <!-- <h3>Vision Statement</h3>
-                           <p>"FLATWORLD SOLUTIONS WILL BE A PARTNER OF CHOICE BY PROVIDING VALUE TO ENABLE OUR CUSTOMER’S LONG-TERM SUSTAINABLE GROWTH".</p> -->
                            {!!html_entity_decode($home[0]['columnright'])!!}
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="talking_vector">
-                  <img src="images/character-vector.png" alt="">
+               <div class="talking_vector">         
+                  @include('frontend.animation.home.Home_x715')
                </div>
             </div>
             <img src="images/forground-characters.png" alt="" class="forground-img">
          </section>
      </div>
-               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-               <script src="js/bootstrap.min.js"></script>
-               <script>
-                  $(document).ready(function(){
-                  $('#nav-icon1').click(function(){
-                  $(this).toggleClass('open');
-                  $('.overlay').toggleClass('overlay-show');
-                  });
-                  });
-                  
-                  
-                  jQuery('#nav-icon1').on('click',function(){
-                  jQuery('body').toggleClass('active_menu');
-                  });
-                  
+              
+<script>
+$(document).ready(function() {
+  setTimeout(function() {
+      $('.video_cstm')[0].play();
+  }, 16000);
 
-                  jQuery('.navbar-collapse.in li').on('click',function(){
-                  jQuery('body').removeClass('active_menu');
-                  });
-               </script>
-               <!-- modal box popup -->
-               <!-- Modal -->
-               <div id="myModal" class="modal fade" role="dialog">
-                  <div class="modal-dialog">
-                     <!-- Modal content-->
-                     <div class="modal-content">
-                        <!--<div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title">Modal Header</h4>
-                           </div> -->
-                        <div class="modal-body videoyoutube">
-                        <!--<iframe width="100%" height="315" src="{{strip_tags($home[0]['columncenter'])}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-                           <video width="100%" height="337" class="video_cstm" controls >
-                              <source src="/images/{!!html_entity_decode($home[0]['columncenter'])!!}" allow="autoplay" type="video/mp4">  
-                           </video>
-                           <!-- {!!html_entity_decode($home[0]['columncenter'])!!}
-                           {{strip_tags($home[0]['columncenter'])}} -->
-                              <script>   
-                            
+  setTimeout(function() {
+    $("#main-video-tag").addClass('fxxscr zindexsrc');
+  }, 16999);
 
-                              $('.video_sec a').on('click', function () {
-                                $(this).hide(); 
-                                $('.video_cstm')[0].play();
+  setTimeout(function() {
+    $("#main-video-tag").addClass('fullscreen');
+  }, 17000);
 
-                              })
-                              $('#myModal').on('hidden.bs.modal', function () {
-                                $('.video_cstm')[0].pause();
-                              })
-                              </script>
+ setTimeout(function() {
+    $("#video").addClass('videotag');  
+  }, 21000);
 
-                        </div>
-                     </div>
-                  </div>
-               </div>
-   </body>
- @endsection     
+ setTimeout(function() {
+  $("#main-video-tag").removeClass('video-self'); 
+  }, 22500);
+
+  setTimeout(function() {
+    $("#main-video-tag").removeClass('zindexsrc');
+  }, 21000);
+
+ setTimeout(function() {
+    $("#main-video-tag").removeClass('fxxscr');
+  }, 22700);
+});
+
+
+$(document).ready(function(){
+    
+  $( '.video_cstm' ).on(
+      'timeupdate', 
+
+      function(event){
+          $this = $(this);
+          if( this.currentTime > ( this.duration - 2 ) ) {
+              $this.addClass('video-portal');
+              $("#main-video-tag").addClass('full-remaining');
+          }
+
+      });
+
+  $(document).keydown(function(e){   
+    if(e.keyCode == 27) {
+      if ($('#main-video-tag').hasClass('fullscreen')) {
+              //$('.video_cstm').addClass('video-portal');
+              $("#main-video-tag").addClass('video-esc');
+      } 
+    }
+  });
+});
+</script>
+</body>
+@endsection     

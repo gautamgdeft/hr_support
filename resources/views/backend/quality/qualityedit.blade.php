@@ -19,6 +19,11 @@
         </section>
 <!-- Main content -->
 <section class="content">
+    @if(session('qualitysuccess'))
+        <div class="alert-box success">
+          <h1><small>{{ Session('qualitysuccess') }}</small></h1>
+        </div>
+    @endif
     <form method="POST" action="{{ route('quality.update') }}">
         {{ csrf_field() }}
        <div class='box box-info'>

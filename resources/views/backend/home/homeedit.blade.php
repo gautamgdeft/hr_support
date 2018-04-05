@@ -19,6 +19,14 @@
         </section>
 <!-- Main content -->
 <section class="content">
+
+            @if(session('homesuccess'))
+                <div class="alert-box success">
+                    <h1><small>{{ Session('homesuccess') }}</small></h1>
+                </div>
+            @endif
+
+
     <form method="POST" action="{{ route('homesecupdate') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class='box box-info'>
@@ -27,6 +35,7 @@
             </div>
             <div class="box-body pad">
                 <input type="hidden" name="home_id" value="{!!html_entity_decode($homesecdata[0]['id'])!!}">
+                <input type="hidden" name="oldvideo" value="{!!html_entity_decode($homesecdata[0]['columncenter'])!!}">
             </div>
             <div class='box-body pad'>
                 <textarea id="editor1" name="columnleft" rows="10" cols="80" class="summernote">{!!html_entity_decode($homesecdata[0]['columnleft'])!!}</textarea>

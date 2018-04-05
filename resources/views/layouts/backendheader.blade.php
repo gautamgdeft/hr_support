@@ -5,23 +5,24 @@
         <title>AdminLTE | Dashboard</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
-        <link href="backend/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/backend/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
-        <link href="backend/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="/backend/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
-        <link href="backend/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/backend/css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <!-- Morris chart -->
-        <link href="backend/css/morris/morris.css" rel="stylesheet" type="text/css" />
+        <link href="/backend/css/morris/morris.css" rel="stylesheet" type="text/css" />
         <!-- jvectormap -->
-        <link href="backend/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+        <link href="/backend/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
         <!-- fullCalendar -->
-        <link href="backend/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+        <link href="/backend/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
         <!-- Daterange picker -->
-        <link href="backend/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+        <link href="/backend/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
         <!-- bootstrap wysihtml5 - text editor -->
-        <link href="backend/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+        <link href="/backend/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
-        <link href="backend/css/AdminLTE.css" rel="stylesheet" type="text/css" />    
+        <link href="/backend/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+         <link href="/backend/css/custom-back.css" rel="stylesheet" type="text/css" />    
     </head>
     <body class="skin-black">
         <!-- header logo: style can be found in header.less -->
@@ -47,7 +48,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="backend/img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="/backend/img/avatar3.png" class="img-circle" alt="User Image" />
                                     <p>
                                         {{ Auth::user()->name }}
                                     </p>
@@ -71,7 +72,7 @@
 
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                   document.getElementById('logout-form').submit();">
-                                                  {{ Auth::user()->name }} / Logout
+                                                   Logout
                                          </a>
                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                   {{ csrf_field() }}
@@ -94,9 +95,9 @@
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <!-- jQuery UI 1.10.3 -->
-        <script src="backend/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <script src="/backend/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
         <!-- Bootstrap -->
-        <script src="backend/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/backend/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- Morris.js charts -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
         <!-- <script src="backend/js/plugins/morris/morris.min.js" type="text/javascript"></script> -->
@@ -104,31 +105,49 @@
 
         <script src="/js/validator.js" type="text/javascript"></script>
 
-        <script src="backend/js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+        <script src="/backend/js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
         <!-- jvectormap -->
-        <script src="backend/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
-        <script src="backend/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+        <script src="/backend/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
+        <script src="/backend/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
         <!-- fullCalendar -->
-        <script src="backend/js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <script src="/backend/js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
         <!-- jQuery Knob Chart -->
-        <script src="backend/js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
+        <script src="/backend/js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
         <!-- daterangepicker -->
-        <script src="backend/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+        <script src="/backend/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
         <!-- Bootstrap WYSIHTML5 -->
-        <script src="backend/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+        <script src="/backend/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
         <!-- iCheck -->
-       <script src="backend/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+       <script src="/backend/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 
         <!-- AdminLTE App -->
-        <script src="backend/js/AdminLTE/app.js" type="text/javascript"></script>
+        <script src="/backend/js/AdminLTE/app.js" type="text/javascript"></script>
         
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-      <script src="backend/js/AdminLTE/dashboard.js" type="text/javascript"></script> 
-        <script src="backend/js/plugins/ckeditor/ckeditor.js" type="text/javascript"></script>
+    <script src="/backend/js/AdminLTE/dashboard.js" type="text/javascript"></script> 
+    <script src="/backend/js/AdminLTE/custom.js" type="text/javascript"></script>
+    <script src="/backend/js/plugins/ckeditor/ckeditor.js" type="text/javascript"></script>
+
+
+    <!-- Magnific Popup core CSS file -->
+         <link rel="stylesheet" href="/js/magnific-popup/magnific-popup.css">
+
+<!--  jQuery 1.7.2+ or Zepto.js 1.0+ 
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
+      <!-- Magnific Popup core JS file -->
+      <script src="/js/magnific-popup/jquery.magnific-popup.js"></script>
+
+
+
+
+
+
+
         <script type="text/javascript">
             $(function() {
                 CKEDITOR.replace('editor1');
-                CKEDITOR.replace('editor2');
+                // CKEDITOR.replace('editor2');
                 CKEDITOR.replace('editor3');
                 $(".textarea").wysihtml5();
             });  

@@ -19,6 +19,12 @@
         </section>
 <!-- Main content -->
 <section class="content">
+
+    @if(session('historysuccess'))
+        <div class="alert-box success">
+          <h1><small>{{ Session('historysuccess') }}</small></h1>
+        </div>
+    @endif
     <form method="POST" action="{{ route('history.update') }}">
         {{ csrf_field() }}
        <div class='box box-info'>

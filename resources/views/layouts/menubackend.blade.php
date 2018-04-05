@@ -2,7 +2,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="backend/img/avatar3.png" class="img-circle" alt="User Image" />
+                            <img src="/backend/img/avatar3.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
                             <p>Hello, {{ Auth::user()->name }}</p>
@@ -12,12 +12,12 @@
                     </div>
                     <!-- search form -->
                     <form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
+                        <!-- <div class="input-group">
                             <input type="text" name="q" class="form-control" placeholder="Search..."/>
                             <span class="input-group-btn">
                                 <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
                             </span>
-                        </div>
+                        </div> -->
                     </form>
                     <!-- /.search form -->
                     
@@ -30,11 +30,11 @@
                         </li>
 
                         <!--Edit profile Section-->
-                        <li class="{{ Request::is('user-profile') ? 'active' : '' }}" id="home">
+                        <!-- <li class="{{ Request::is('user-profile') ? 'active' : '' }}" id="home">
                             <a href="{{route('userprofile')}}">
                                 <i class="fa fa-th"></i> <span>User Profile</span>
                             </a>
-                        </li>
+                        </li> -->
                         <!--Edit profile section ends -->
 
                         <!-- Main Page section -->
@@ -46,46 +46,78 @@
                             </a>
                         </li>
                         <!-- History Page -->
-                        <li class="{{ Request::is('history') ? 'active' : '' }}" id="history">
+                        <li class="{{ Request::is('history-section') ? 'active' : '' }}" id="history">
                             <a href="{{route('history.section')}}">
                                 <i class="fa fa-th"></i> <span>History Page</span>
                             </a>
                         </li>
                         <!-- Quality Page -->
-                        <li class="{{ Request::is('quality') ? 'active' : '' }}" id="quality">
+                        <li class="{{ Request::is('quality-section') ? 'active' : '' }}" id="quality">
                             <a href="{{route('quality.section')}}">
                                 <i class="fa fa-th"></i> <span>Quality Page</span>
                             </a>
                         </li>
                         <!-- Life Page -->
-                        <li class="{{ Request::is('life') ? 'active' : '' }}" id="life">
+                        <li class="{{ Request::is('life-section') ? 'active' : '' }}" id="life">
                             <a href="{{route('life.section')}}">
                                 <i class="fa fa-th"></i> <span>Life Page</span>
                             </a>
                         </li>
                         <!-- Work Page -->
-                        <li class="{{ Request::is('work') ? 'active' : '' }}" id="work">
+                        <li class="{{ Request::is('work-section') ? 'active' : '' }}" id="work">
                             <a href="{{route('work.section')}}">
                                 <i class="fa fa-th"></i> <span>Work Page</span>
                             </a>
                         </li>
                         <!-- Employment Page -->
-                        <li class="{{ Request::is('employment') ? 'active' : '' }}" id="employment">
+                        <li class="{{ Request::is('employment-section') ? 'active' : '' }}" id="employment">
                             <a href="{{route('employment.section')}}">
                                 <i class="fa fa-th"></i> <span>Employment Page</span>
                             </a>
                         </li>
                         <!-- Work vs Life Page -->
-                        <li class="{{ Request::is('workvslife') ? 'active' : '' }}" id="workvslife">
+                        <li class="{{ Request::is('worklife-section') ? 'active' : '' }}" id="workvslife">
                             <a href="{{route('worklife.section')}}">
                                 <i class="fa fa-th"></i> <span>Work-vs-life Page</span>
                             </a>
                         </li>
                          <!-- Growth Page -->
-                        <li class="{{ Request::is('growth') ? 'active' : '' }}" id="growth">
+                        <li class="{{ Request::is('growth-section') ? 'active' : '' }}" id="growth">
                             <a href="{{route('growth.section')}}">
                                 <i class="fa fa-th"></i> <span>Growth Page</span>
                             </a>
+                        </li>
+                        <!-- Benifits Page -->
+                        <li class="{{ Request::is('benifits-section') ? 'active' : '' }}" id="benifits">
+                            <a href="{{route('benifits.section')}}">
+                                <i class="fa fa-th"></i> <span>Benifits Page</span>
+                            </a>
+                        </li>
+
+                        <!-- Fun Page -->
+                        <li class="{{ (\Request::route()->getName() == 'fun.section' || \Request::route()->getName() == 'fun.new' || \Request::route()->getName() == 'fun.edit') ? 'active' : '' }}" id="fun">
+                            <a href="{{route('fun.section')}}">
+                                <i class="fa fa-th"></i> <span>Fun Page</span>
+                            </a>
+                            <ul class="treeview-menu" style="display:none;">
+                                <li class="{{ Request::is('fun-section') ? 'active' : '' }}">
+                                <a href="{{route('fun.section')}}"><i class="fa fa-angle-double-right"></i>All Fun Events</a></li>
+                                <li class="{{ Request::is('fun-addnew') ? 'active' : '' }}">
+                                <a href="{{route('fun.new')}}"><i class="fa fa-angle-double-right"></i>Add New Event</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Contact Page -->
+                        <li class="{{ (\Request::route()->getName() == 'contact.section' || \Request::route()->getName() == 'contact.new' || \Request::route()->getName() == 'contact.edit') ? 'active' : '' }}" id="contact">
+                            <a href="{{route('contact.section')}}">
+                                <i class="fa fa-th"></i> <span>Contact Page</span>
+                            </a>
+                            <ul class="treeview-menu" style="display:none;">
+                                <li class="{{ Request::is('contact-section') ? 'active' : '' }}">
+                                <a href="{{route('contact.section')}}"><i class="fa fa-angle-double-right"></i>All Contacts</a></li>
+                                <li class="{{ Request::is('contact-addnew') ? 'active' : '' }}">
+                                <a href="{{route('contact.new')}}"><i class="fa fa-angle-double-right"></i>Add New Contact</a></li>
+                            </ul>
                         </li>
                         <!-- Main page section ended -->
 

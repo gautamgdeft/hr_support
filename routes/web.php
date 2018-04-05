@@ -15,15 +15,24 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('auth/login');
-});
+// Route::get('/', function () {
+
+// 	$sid = Auth::user()->id;
+// 	if(!empty($sid)){
+// 		return view('frontend/index');
+// 	}
+// 	else{
+// 		return view('auth/login');
+// 	}  
+// });
 
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 /*--------------pages frontend------------*/
-Route::get('/home', 'forntendController@homepage')->name('home');
+Route::get('/', 'forntendController@homepage')->name('home');
+
+Route::get('/home', 'forntendController@mainhomepage')->name('mainhome');
 
 Route:: get('/history','forntendController@history')->name('history');
 
@@ -46,16 +55,17 @@ Route:: get('/fun','forntendController@fun')->name('fun');
 Route:: get('/dialup','forntendController@dialup')->name('dialup');
 /*--------------pages frontend ended------------*/
 
-/*----edit user profile frontend-------*/
-Route:: get('/viewuser','forntendController@viewuser')->name('front.view.user');
-Route:: get('/edituser','forntendController@edituser')->name('front.edit.user');
-Route:: post('/edituser','forntendController@updateuserprofile')->name('front.update.user');
-Route:: get('/editpassword','forntendController@edituserpassword')->name('front.password.edit');
-Route:: post('/editpassword','forntendController@updateuserpassword')->name('front.password.update');
+/*----USER BACKEND------*/
+Route:: get('/user-admin','UserAdminController@userbckendhomepage')->name('user.admin.homepage');
+Route:: get('/userprofile','UserAdminController@userbckendprofile')->name('user.profile.view');
+Route:: get('/edit-profile','UserAdminController@userbckendeditprofile')->name('user.edit.profile');
+Route:: post('/update-profile','UserAdminController@userbckendprofileupdate')->name('user.profile.updates');
+Route:: get('/edit-password','UserAdminController@userbckendeditpassword')->name('user.edit.password');
+Route:: post('/update-password','UserAdminController@userbckendpasswordupdate')->name('user.password.updates');
+/*----USER BACKEND END------*/
 
-/*----edit user profile frontend ended------*/
 
-
+Route:: get('/zoho','CronjobController@cronhit')->name('cron.zoho');
 
 
 /*
@@ -63,8 +73,6 @@ Route:: post('/editpassword','forntendController@updateuserpassword')->name('fro
  Backend admin Section Routes 
 *
 */
-
-
 
 
 Route:: get('/LaraAdmin','backendController@adminhomepage')->name('adminhomepage');
@@ -142,3 +150,45 @@ Route:: post('/growth-edit','backendController@growthseccontent')->name('growth.
 //Update Growth page
 Route:: post('/growth-update','backendController@growthsecupdate')->name('growth.update');
 /*---------------Growth page related routes ended-----------------------------*/
+
+/*---------------Benifits page related routes-----------------------------------*/
+Route:: get('/benifits-section','backendController@benifitssection')->name('benifits.section');
+//Save Benifits page
+Route:: post('/benifits-edit','backendController@benifitsseccontent')->name('benifits.edit');
+//Update Benifits page
+Route:: post('/benifits-update','backendController@benifitssecupdate')->name('benifits.update');
+/*---------------Benifits page related routes ended-----------------------------*/
+
+
+/*---------------Contact page related routes-----------------------------------*/
+Route:: get('/contact-section','backendController@contactsection')->name('contact.section');
+
+Route:: get('/contact-addnew','backendController@contactaddnew')->name('contact.new');
+Route:: post('/contact-newentry','backendController@contactaddnewentry')->name('contact.newentry');
+
+//Save Contact page
+Route:: get('/contact-edit','backendController@contactseccontent')->name('contact.edit');
+//Update Contact page
+Route:: post('/contact-update','backendController@contactsecupdate')->name('contact.update');
+//delete contact entry
+Route:: get('/contact-delete','backendController@contactdelete')->name('contact.delete');
+
+/*---------------Contact page related routes ended-----------------------------*/
+
+/*---------------Fun page related routes-----------------------------------*/
+Route:: get('/fun-section','backendController@funsection')->name('fun.section');
+
+Route:: get('/fun-addnew','backendController@funaddnew')->name('fun.new');
+
+Route:: post('/fun-newentry','backendController@funaddnewentry')->name('fun.newentry');
+
+//Edit fun page
+Route:: get('/fun-edit/{id}','backendController@funcontent')->name('fun.edit');
+//Update fun page
+Route:: post('/fun-update','backendController@funupdate')->name('fun.update');
+//delete fun entry
+Route:: get('/fun-delete','backendController@fundelete')->name('fun.delete');
+//delete gallery image
+Route:: get('/fun-galdlt','backendController@fungallerydelete')->name('fun.delete.gallery');
+
+/*---------------Fun page related routes ended-----------------------------*/

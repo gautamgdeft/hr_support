@@ -22,13 +22,27 @@
          {{ Request::is('editpassword') ? 'Edit-Password' : '' }}
       </title>
       <link rel="icon" href="images/favicon.png" type="image/x-icon">
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet">
-      <link href="css/font-awesome.min.css" rel="stylesheet">
-      <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
+      <link href="/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/css/style.css" rel="stylesheet">
+      <link href="/css/font-awesome.min.css" rel="stylesheet">
+      <link href="/css/jquery.mCustomScrollbar.css" rel="stylesheet">
 
-       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-              <script src="/js/validator.js" type="text/javascript"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+       <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="/js/validator.js" type="text/javascript"></script>
+      <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
+      <script src="/js/custom.js" type="text/javascript"></script>
+      <!-- Magnific Popup core CSS file -->
+         <link rel="stylesheet" href="/js/magnific-popup/magnific-popup.css">
+
+<!--  jQuery 1.7.2+ or Zepto.js 1.0+ 
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
+      <!-- Magnific Popup core JS file -->
+      <script src="/js/magnific-popup/jquery.magnific-popup.js"></script>
    </head>
         @yield('content')
 </html>

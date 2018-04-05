@@ -16,19 +16,15 @@
                   <li><a href="{{ route('register') }}">Register</a></li>
                @else
                
-                  <li class="sub-menus user-name-menu"> <a class="anchor-no-css" href="#">{{ Auth::user()->name }} </a>
+                  <li class="sub-menus user-name-menu front-menu"> <a class="anchor-no-css" href="#">{{ Auth::user()->name }} </a>
                      <ul class="inner-user-menu">
-                      @if(Auth::user()->Role == 'admin')
-                     <li><a href="{{route('adminhomepage')}}">Dashboard</a></li>
-                     @else
-                     <li><a href="{{route('front.view.user')}}">Edit Profile</a></li>
-                  @endif
-                    <li> <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();">
-                              Logout
-                     </a></li>
-                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              {{ csrf_field() }}
+                     <li><a href="{{route('user.admin.homepage')}}">Dashboard</a></li>
+                     <li>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">Logout
+                        </a>
+                     </li>
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> {{ csrf_field() }}
                      </form>
                      </ul>
                   </li>
@@ -51,17 +47,17 @@
          </div>
          <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-            <li><a href="{{route('home')}}">Home</a></li>
-               <li><a href="{{route('history')}}">History@flatworld</a></li>
-               <li><a href="{{route('quality')}}">Quality@flatworld</a></li>
-               <li><a href="{{route('life')}}">life@flatworld</a></li>
-               <li><a href="{{route('work')}}">Work@flatworld</a></li>
-               <li><a href="{{route('employment')}}">Employment@flatworld</a></li>
-               <li><a href="{{route('workvslife')}}">Work vs life@flatworld</a></li>
-               <li><a href="{{route('growth')}}">growth@flatworld</a></li>
-               <li><a href="{{route('benifits')}}">benefits@flatworld</a></li>
-               <li><a href="{{route('fun')}}">fun@flatworld</a></li>
-               <li><a href="{{route('dialup')}}">dail-up@flatworld</a></li>
+               <li class="dash-menu {{ Request::is('home') ? 'active' : '' }}"><a href="{{route('home')}}">Home</a></li>
+               <li class="dash-menu {{ Request::is('history') ? 'active' : '' }}"><a href="{{route('history')}}">History@flatworld</a></li>
+               <li class="dash-menu {{ Request::is('quality') ? 'active' : '' }}"><a href="{{route('quality')}}">Quality@flatworld</a></li>
+               <li class="dash-menu {{ Request::is('life') ? 'active' : '' }}"><a href="{{route('life')}}">life@flatworld</a></li>
+               <li class="dash-menu {{ Request::is('work') ? 'active' : '' }}"><a href="{{route('work')}}">Work@flatworld</a></li>
+               <li class="dash-menu {{ Request::is('employment') ? 'active' : '' }}"><a href="{{route('employment')}}">Employment@flatworld</a></li>
+               <li class="dash-menu {{ Request::is('workvslife') ? 'active' : '' }}"><a href="{{route('workvslife')}}">Work vs life@flatworld</a></li>
+               <li class="dash-menu {{ Request::is('growth') ? 'active' : '' }}"><a href="{{route('growth')}}">growth@flatworld</a></li>
+               <li class="dash-menu {{ Request::is('benifits') ? 'active' : '' }}"><a href="{{route('benifits')}}">benefits@flatworld</a></li>
+               <li class="dash-menu {{ Request::is('fun') ? 'active' : '' }}"><a href="{{route('fun')}}">fun@flatworld</a></li>
+               <li class="dash-menu {{ Request::is('dialup') ? 'active' : '' }}"><a href="{{route('dialup')}}">dail-up@flatworld</a></li>
             </ul>
          </div>
          <div class="overlay"> </div>

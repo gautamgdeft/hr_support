@@ -11,6 +11,11 @@ use App\Work;
 use App\Employment;
 use App\Workvslife;
 use App\Growth;
+use App\Benifits;
+use App\Contact;
+use App\Fun;
+use App\Funimages;
+
 use Session;
 use Auth;
 use Hash;
@@ -118,7 +123,7 @@ class backendController extends Controller
 
 /*-----------------------------------------------------------------------*/
     
-    /*dashboard home page section */
+/*dashboard home page section */
         public function homesection(){
 
             $homesecdata = Home::all();
@@ -145,9 +150,14 @@ class backendController extends Controller
         public function homesecupdate(Request $request){
 
             $homesecdata  = Home::find($request->home_id);
-            //dd($request);
+
+
+        if(!empty($request->columncenter)){
             $imageName = time().'.'.request()->columncenter->getClientOriginalExtension();
             request()->columncenter->move(public_path('images'), $imageName);
+        }else{
+            $imageName = $request->oldvideo;
+        }
             $homesecdata->update($request->all());
 
             if ($request->hasFile('columncenter')) {
@@ -155,8 +165,7 @@ class backendController extends Controller
             $homesecdata->save();
             }
 
-            return redirect()->route('homesection')->with('homesuccess' , 'update successfully'); 
-
+            return redirect()->route('homesection')->with('homesuccess' , 'Update successfully'); 
         }
 
 
@@ -164,7 +173,7 @@ class backendController extends Controller
 
 /*-----------------------------------------------------------------------*/
 
-    /*dashboard History page section */
+/*dashboard History page section */
 
         public function historysection(){
 
@@ -192,7 +201,7 @@ class backendController extends Controller
 
             $historydata  = History::find($request->history_id);
             $historydata->update($request->all());
-            return redirect()->route('history.section')->with('historysuccess' , 'update successfully'); 
+            return redirect()->route('history.section')->with('historysuccess' , 'Update successfully'); 
 
         }
 
@@ -203,7 +212,7 @@ class backendController extends Controller
 
 
 
- /*dashboard Quality page section */
+/*dashboard Quality page section */
 
         public function qualitysection(){
             $qualitydata = Quality::all();
@@ -229,7 +238,7 @@ class backendController extends Controller
         public function qualitysecupdate(Request $request){
             $qualitydata  = Quality::find($request->quality_id);
             $qualitydata->update($request->all());
-            return redirect()->route('quality.section')->with('qualitysuccess' , 'update successfully'); 
+            return redirect()->route('quality.section')->with('qualitysuccess' , 'Update successfully'); 
 
         }
 
@@ -263,7 +272,7 @@ class backendController extends Controller
         public function lifesecupdate(Request $request){
             $lifedata  = Life::find($request->life_id);
             $lifedata->update($request->all());
-            return redirect()->route('life.section')->with('lifesuccess' , 'update successfully'); 
+            return redirect()->route('life.section')->with('lifesuccess' , 'Update successfully'); 
 
         }
 
@@ -297,7 +306,7 @@ class backendController extends Controller
         public function worksecupdate(Request $request){
             $workdata  = Work::find($request->work_id);
             $workdata->update($request->all());
-            return redirect()->route('work.section')->with('worksuccess' , 'update successfully'); 
+            return redirect()->route('work.section')->with('worksuccess' , 'Update successfully'); 
 
         }
 
@@ -331,7 +340,7 @@ class backendController extends Controller
         public function employmentsecupdate(Request $request){
             $employmentdata  = Employment::find($request->employment_id);
             $employmentdata->update($request->all());
-            return redirect()->route('employment.section')->with('employmentsuccess' , 'update successfully'); 
+            return redirect()->route('employment.section')->with('employmentsuccess' , 'Update successfully'); 
 
         }
 
@@ -365,7 +374,7 @@ class backendController extends Controller
         public function worklifesecupdate(Request $request){
             $worklifedata  = Workvslife::find($request->workvslife_id);
             $worklifedata->update($request->all());
-            return redirect()->route('worklife.section')->with('worklifesuccess' , 'update successfully'); 
+            return redirect()->route('worklife.section')->with('worklifesuccess' , 'Update successfully'); 
 
         }
 
@@ -399,11 +408,303 @@ class backendController extends Controller
         public function growthsecupdate(Request $request){
             $growthdata  = Growth::find($request->growth_id);
             $growthdata->update($request->all());
-            return redirect()->route('growth.section')->with('growth' , 'update successfully'); 
+            return redirect()->route('growth.section')->with('growthsuccess' , 'Update successfully'); 
         }
 
     /*dashboard Growth page section ends*/
 
 /*-----------------------------------------------------------------------*/
 
+/*dashboard Benifits page section */
+
+        public function benifitssection(){
+            $benifitdata = Benifits::all();
+            if(!empty($benifitdata[0]['id'])){
+                return view('backend.benifits.benifitsedit', compact('benifitdata'));
+            } 
+            else{
+                return view('backend.benifits.benifitsmain');
+            }
+        }
+
+    /*dashboard work vs life page save data query*/
+
+        public function benifitsseccontent (Request $request){
+                    $benifittext = new Benifits($request->all());
+                    $benifittext->save();
+                    Session::flash('success', 'Page Content updated.');
+                    return redirect()->route('benifits.section'); 
+        }
+
+    /*dashboard work vs life page update data query*/ 
+
+        public function benifitssecupdate(Request $request){
+            $benifitdata  = Benifits::find($request->benifits_id);
+            $benifitdata->update($request->all());
+            return redirect()->route('benifits.section')->with('benifitssuccess' , 'Update successfully'); 
+        }
+
+/*dashboard Benifits page section ends*/
+
+/*-----------------------------------------------------------------------*/
+
+
+/*dashboard Contact page section */
+
+        public function contactsection(){
+            $contactdata = Contact::all();
+
+            //dd(count($contactdata));
+
+
+            if(count($contactdata) != 0 ){
+                return view('backend.contact.contactmain', compact('contactdata'));
+            } 
+            else{
+                return view('backend.contact.error');
+            }
+        }
+
+        public function contactaddnew(){
+            return view('backend.contact.contactaddnew');
+        }
+    /*Add new contact*/
+        public function contactaddnewentry(Request $request){
+
+        request()->validate([
+
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            
+        ]);
+
+
+            $contact = new Contact($request->all());
+            $imageName = time().'.'.request()->photo->getClientOriginalExtension();
+            if ($request->hasFile('photo')) {   
+                $contact->photo = $imageName;
+            }
+            request()->photo->move(public_path('images'), $imageName);
+            $contact->save();
+            return redirect()->route('contact.section')->with('contactadd' , 'Added successfully'); 
+        }
+
+
+   
+
+        public function contactseccontent (Request $request){
+            $contact_id = $_GET['id'];
+            $contactdata = Contact::find($contact_id);
+            //dd($cont);
+            
+            //$contactdata = Contact::all();
+
+               return view('backend.contact.contactedit', compact('contactdata'));
+        }
+
+   
+        /*update contact details*/
+        public function contactsecupdate(Request $request){
+
+        request()->validate([
+
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            
+        ]);
+
+
+            $contactdata  = Contact::find($request->contact_id);
+
+        if(!empty($request->photo)){
+            $imageName = time().'.'.request()->photo->getClientOriginalExtension();
+            
+            request()->photo->move(public_path('images'), $imageName);
+        }else{
+            $imageName = $request->oldphoto;
+        }
+
+            $contactdata->update($request->all());
+            if ($request->hasFile('photo')) {   
+                $contactdata->photo = $imageName;
+                $contactdata->save();
+            }
+            return redirect()->route('contact.section')->with('contactupdate' , 'Update successfully'); 
+        }
+
+
+
+    /*delete contact details*/
+
+        public function contactdelete(){
+            $contact_id = $_GET['id'];
+            $detail = Contact::where('id', $contact_id)->delete();
+            return redirect()->route('contact.section')->with('contactdlt' , 'Deleted successfully');
+        }
+
+/*dashboard Contact page section ends*/
+
+/*-----------------------------------------------------------------------*/
+
+/*dashboard fun page section */
+
+        public function funsection(){
+            $fundata = Fun::all();
+            $funimages = Funimages::all();
+
+
+            if(count($fundata) != 0){
+                return view('backend.fun.funmain', compact('fundata','funimages'));
+            } 
+            else{
+                return view('backend.fun.error');
+            }
+        }
+
+   /*Add new*/
+        public function funaddnew(){
+            return view('backend.fun.funaddnew');
+        }
+ 
+        public function funaddnewentry(Request $request){
+            $arrfirst = $request->event_gallery;
+
+            request()->validate([
+
+            'event_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            
+            ]);
+
+            //dd($request->event_image);
+        /*entry table fun*/
+            $fun = new Fun();
+            $fun->event_name = $request->event_name;
+            $imageName = time().'.'.request()->event_image->getClientOriginalExtension();
+            request()->event_image->move(public_path('images'), $imageName);
+             if ($request->hasFile('event_image')) {   
+                $fun->event_image = $imageName;
+            }
+            $fun->save();
+        /*entry table funimages*/
+
+       
+        // dd($str);
+                foreach($arrfirst as $gallery )
+                {
+
+                $extension = $gallery->getClientOriginalExtension();
+                if($extension == "jpg" || $extension == "jpeg" || $extension == "png" ){
+                    $str = str_random(3);
+                    $fungallery = new Funimages();
+                    $fungallery->event_id = $fun->id;
+                    $imagegalName = time().'_'.$str.'.'.$gallery->getClientOriginalExtension();
+                  // dd( $imagegalName);
+                    $gallery->move(public_path('images'), $imagegalName);
+                     if ($request->hasFile('event_gallery')) {   
+                        $fungallery->event_gallery = $imagegalName;
+                    }
+                    $fungallery->save(); 
+
+                    }else{
+
+                    return back()->with('fungaledit' , 'Image formatt Should be jpeg, jpg, png');
+                    }
+
+                }
+
+             
+              return redirect()->route('fun.section')->with('funadd' , 'Added successfully');; 
+        }
+
+
+
+/*delete fun details*/
+
+        public function fundelete(){
+            $fun_id = $_GET['id'];
+            $detail = Fun::where('id', $fun_id)->delete();
+            $detail = Funimages::where('event_id', $fun_id)->delete();
+            return redirect()->route('fun.section')->with('fundlt' , 'delete successfully');
+        }
+
+
+/*Update Fun details*/
+public function funcontent (Request $request, $id){
+            $funup_id = $id;
+            $fundata = Fun::find($funup_id);
+            $funimages = Funimages::all();
+            return view('backend.fun.funedit', compact('fundata','funimages'));
 }
+
+
+public function funupdate(Request $request){
+    //dd($request->all());
+
+            request()->validate([
+                'event_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+
+            $fundata  = Fun::find($request->fun_id);
+
+        if(!empty($request->event_image)){
+            $imageName = time().'.'.request()->event_image->getClientOriginalExtension();
+            
+            request()->event_image->move(public_path('images'), $imageName);
+        }else{
+            $imageName = $request->oldphoto;
+        }
+
+            $fundata->update($request->all());
+            if ($request->hasFile('event_image')) 
+            {   
+                $fundata->event_image = $imageName;
+                $fundata->save();
+            }
+
+            $fun_id = $request->fun_id;
+
+            if(!empty($request->event_gallery))
+            {
+                $arrfirstupdate = $request->event_gallery;
+                
+                foreach($arrfirstupdate as $gallery )
+                {
+                $extension = $gallery->getClientOriginalExtension();
+                if($extension == "jpg" || $extension == "jpeg" || $extension == "png" ){
+                    $str = str_random(3);
+                    $fungallery = new Funimages();
+                    $fungallery->event_id = $fun_id;
+                    $imagegalName = time().'_'.$str.'.'.$gallery->getClientOriginalExtension();
+                    // dd( $imagegalName);
+                    $gallery->move(public_path('images'), $imagegalName);
+                    if ($request->hasFile('event_gallery')) 
+                    {   
+                        $fungallery->event_gallery = $imagegalName;
+                    }
+                    $fungallery->save();  
+                
+                }else{
+
+                    return back()->with('fungaledit' , 'Image formatt Should be jpeg, jpg, png');
+                }
+
+                }
+            }else{
+                $arrfirstupdate = $request->oldgallery;
+            }
+            
+            return back()->with('funupdate' , 'Update successfully');
+        }
+
+/*Delete fun-gallery details*/
+
+        public function fungallerydelete(){
+            $fungal_id = $_GET['gid'];
+            $detail = Funimages::where('id', $fungal_id)->delete();
+            return back()->with('fungalimgdlt' , 'Gallery Image deleted successfully');
+        }
+
+/*dashboard Fun page section ends*/
+
+/*-----------------------------------------------------------------------*/
+}
+
+
