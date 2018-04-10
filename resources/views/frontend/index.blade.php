@@ -15,8 +15,6 @@
                   <div class="col-sm-3">
                      <div class="statement_sec">
                         <div class="content">
-                           <!-- <h3>Mission Statement</h3>
-                           <p>"FLATWORLD IS COMMITTED TO PROVIDING ONGOING VALUE TO OUR CUSTOMERS. WE LEVERAGE TECHNOLOGY AND IMPLEMENT BEST PRACTICES, TO PROVIDE A RANGE OF HIGH QUALITY AND COST-EFFICIENT INFORMATION TECHNOLOGY SOLUTIONS, FROM GLOBAL LOCATIONS ENABLING CUSTOMERS ACHIEVE THEIR BUSINESS GOALS".</p> -->
                            {!!html_entity_decode($home[0]['columnleft'])!!}
                         </div>
                      </div>
@@ -24,17 +22,12 @@
                   <div class="col-sm-6">
                      <div class="led_sec">
                         
-                        <div class="video_sec">
+                        <div class="video_sec" id="video_sec_id">
                            <a href="javascript:void(0)">
                            <img src="images/play-button.png" alt=""></a>
 
                            <div class="main-video video-self" id="main-video-tag"> 
-                           <video width="100%" height="337" id="video" class="video_cstm" >
-                              <source src="/images/{!!html_entity_decode($home[0]['columncenter'])!!}" allow="autoplay" type="video/mp4">  
-                           </video>
-                           <!-- <video width="100%" height="337" id="myvideo" class="video_cstm afterglow" >
-                              <source src="/images/{!!html_entity_decode($home[0]['columncenter'])!!}" allow="autoplay" type="video/mp4">  
-                           </video> --> 
+                           <video width="100%" height="337" id="video" class="video_cstm"><source src="/images/{!!html_entity_decode($home[0]['columncenter'])!!}" allow="autoplay" type="video/mp4"></video>
                            </div>
                         </div>
                     </div>
@@ -104,8 +97,12 @@ $(document).ready(function(){
   $(document).keydown(function(e){   
     if(e.keyCode == 27) {
       if ($('#main-video-tag').hasClass('fullscreen')) {
-              //$('.video_cstm').addClass('video-portal');
-              $("#main-video-tag").addClass('video-esc');
+      $("#video_sec_id").addClass('hide_logo_image');
+      $("#main-video-tag").addClass('video-esc');
+      setTimeout(function() {
+        $("#video").removeClass('videotag');  
+        $("#main-video-tag").removeClass('fullscreen');
+      }, 100);
       } 
     }
   });

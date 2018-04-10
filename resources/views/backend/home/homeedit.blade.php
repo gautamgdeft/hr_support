@@ -25,6 +25,11 @@
                     <h1><small>{{ Session('homesuccess') }}</small></h1>
                 </div>
             @endif
+            @if(session('homevideoerror'))
+                <div class="alert-box success">
+                    <h1><small>{{ Session('homevideoerror') }}</small></h1>
+                </div>
+            @endif
 
 
     <form method="POST" action="{{ route('homesecupdate') }}" enctype="multipart/form-data">

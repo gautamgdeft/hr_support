@@ -1,3 +1,11 @@
+
+@font-face {
+  font-family: 'Calibri';
+  src: url('../fonts/calibri.eot?#iefix') format('embedded-opentype'),  url('../fonts/calibri.woff') format('woff'), url('../fonts/calibri.ttf')  format('truetype'), url('../fonts/calibri.svg#Calibri') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
      margin: 0;
      padding: 0;
@@ -6,7 +14,9 @@
  body {
      overflow-x: hidden;
      font-weight: 400;
-     color: #272727; background:#797979;
+     color: #272727; 
+     background:#797979;
+     font-family: 'Calibri';
 }
  body, html {
      height: 100%;
@@ -611,8 +621,17 @@
      height: 428px;
 }
  .main-history-page .hr-speaking .content ul li{
-    font-weight:600;
-     position:relative;
+    /*font-weight:600;
+     position:relative;*/
+
+     /*5-april-2017*/
+        font-weight: normal;
+        position: relative;
+        font-size: 14px;
+        font-family: Calibri;
+
+
+
 }
  .main-history-page .hr-speaking .content ul li:before{
      position:absolute;
@@ -943,7 +962,19 @@ div#animation_container , div#animation_container > div,
 div#animation_container canvas{ width:100% !important; 
     height: 400px !important; }
 
-
+.hide_logo_image a{
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+}
+.main-video, .video-esc{
+    transition: all 0.8s ease-in-out;
+    -webkit-transition: all 0.8s ease-in-out;
+    -ms-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+}
 
 
 /* NEW CSS */
@@ -957,16 +988,16 @@ div#animation_container canvas{ width:100% !important;
      margin:auto !important; 
      background-color:#797979;
 }
- .home-page .main-wrap .statement_sec .content h3 {
+ /*.home-page .main-wrap .statement_sec .content h3 {
      font-size: 12px;
      line-height: 20px;
-}
+}*/
  .home-page .main-wrap .statement_sec {
      max-width: 170px;
      padding: 14px 14px;
 }
  .home-page .main-wrap .statement_sec .content p {
-     font-size: 8px;
+     font-size: 14px;
 }
  .home-page .main-wrap .statement_sec.pull-right p{
     padding:0px 4px;
@@ -1190,10 +1221,10 @@ body.growth-page .talking_vector {
     /*background: #000 !important;*/
     z-index: 9999;
 }
-.fun-sec .hr-speaking .content ul li img:hover {
+/*.fun-sec .hr-speaking .content ul li img:hover {
     background: #000 !important;
     opacity: 0.5;
-}
+}*/
  .fun-sec .hr-speaking .content ul li img{
     height: 100%;
     width:100%;
@@ -1234,7 +1265,7 @@ body.growth-page .talking_vector {
      margin-bottom:20px;
 }
  .dial-up .fun-sec .hr-speaking .content ul li p{
-    font-size:10px;
+    font-size:14px;
 	text-align:left;
 }
  .dial-up .fun-sec .hr-speaking .content ul li .right-sec{
@@ -1715,7 +1746,7 @@ header nav .navbar-nav li a{ padding: 8px 2px; }
          font-size: 13px;
     }
      .main-wrap .statement_sec .content h3 {
-         font-size: 15px;
+         /*font-size: 15px;*/
          line-height: 30px;
     }
      .main-wrap .statement_sec {
@@ -2099,3 +2130,42 @@ i.fa.fa-search-plus {
 
     font-size: 24px;
 }
+
+
+
+
+.home-page .main-wrap .statement_sec { max-width: 245px; padding: 14px 14px; } 
+.home-page .main-wrap .statement_sec .content p { font-size: 14px; font-weight: normal; line-height: 16px; }
+
+
+/*09-04-18*/
+
+li.event-name {
+    position:  relative;
+}
+
+li.event-name .li-title h1 {
+    position:  absolute;
+    top: 50%;
+    left:  50%;
+    transform: translate(-50%,-50%);
+    font-weight:  600;
+    color: #fff;
+    width:  100%;
+    text-align:  center;
+    font-size: 18px;
+}
+
+li.event-name .li-title {
+    background: rgba(0,0,0,0.7);
+    height:  100%;
+    width:  100%;
+    position:  absolute;
+    top: 0;
+    left:  0;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+}
+li.event-name:hover .li-title{opacity: 1;}
