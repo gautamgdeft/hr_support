@@ -29,7 +29,7 @@
             </div>
          </section>
       </div>
-<div class="popup-zoom" id="zoom-txt">
+<div class="popup-zoom main-history-list" id="zoom-txt">
 <a class="popup-close">X</a>
 {!!html_entity_decode($historytext[0]['historytext'])!!} 
 <a href="{{ route('quality') }}" class="btn-nxt">Next</a>

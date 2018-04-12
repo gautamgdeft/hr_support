@@ -27,7 +27,7 @@
             </div>
          </section>
       </div>
-      <div class="popup-zoom employment-popup-zoom" id="zoom-txt">
+      <div class="popup-zoom employment-popup-zoom employment-list" id="zoom-txt">
             <a class="popup-close ">X</a>
             {!!html_entity_decode($employmenttext[0]['employment_text'])!!}
             <a href="{{ route('workvslife') }}" class="btn-nxt">Next</a>

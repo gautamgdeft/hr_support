@@ -2396,7 +2396,7 @@ lib.properties = {
 	opacity: 1.00,
 	webfonts: {},
 	manifest: [
-		{src:"/sounds/life/_34160765.mp3", id:"_34160765"}
+		{src:"/sounds/life/_34744000.mp3", id:"_34160765"}
 	],
 	preloads: []
 };

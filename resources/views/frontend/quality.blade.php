@@ -29,7 +29,7 @@
          </section>
       </div>
       
-      <div class="popup-zoom quality-popup-zoom" id="zoom-txt">
+      <div class="popup-zoom quality-popup-zoom quality-page-list" id="zoom-txt">
          <a class="popup-close ">X</a>
          {!!html_entity_decode($qualitytext[0]['quality_text'])!!}
          <a href="{{ route('life') }}" class="btn-nxt">Next</a>

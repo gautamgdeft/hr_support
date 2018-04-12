@@ -49,34 +49,38 @@
      </div>
               
 <script>
-$(document).ready(function() {
+$(window).load(function() {
+
+   //alert('page is loaded');
+
+
   setTimeout(function() {
       $('.video_cstm')[0].play();
-  }, 16000);
+  }, 20000);
 
   setTimeout(function() {
     $("#main-video-tag").addClass('fxxscr zindexsrc');
-  }, 16999);
+  }, 18999);
 
   setTimeout(function() {
     $("#main-video-tag").addClass('fullscreen');
-  }, 17000);
+  }, 19000);
 
- setTimeout(function() {
+  setTimeout(function() {
     $("#video").addClass('videotag');  
-  }, 21000);
-
- setTimeout(function() {
-  $("#main-video-tag").removeClass('video-self'); 
-  }, 22500);
+  }, 23000);
 
   setTimeout(function() {
     $("#main-video-tag").removeClass('zindexsrc');
-  }, 21000);
+  }, 23000);
 
- setTimeout(function() {
+  setTimeout(function() {
+    $("#main-video-tag").removeClass('video-self'); 
+  }, 24500);
+
+  setTimeout(function() {
     $("#main-video-tag").removeClass('fxxscr');
-  }, 22700);
+  }, 24700);
 });
 
 

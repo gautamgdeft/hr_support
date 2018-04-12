@@ -28,7 +28,7 @@
             </div>
          </section>
       </div>
-      <div class="popup-zoom growth-popup-zoom" id="zoom-txt">
+      <div class="popup-zoom growth-popup-zoom growth-page-list" id="zoom-txt">
             <a class="popup-close ">X</a>
              {!!html_entity_decode($growthtext[0]['growth_text'])!!}
             <a href="{{ route('benifits') }}" class="btn-nxt">Next</a>

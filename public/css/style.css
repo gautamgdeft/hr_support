@@ -625,7 +625,7 @@
      position:relative;*/
 
      /*5-april-2017*/
-        font-weight: normal;
+        /*font-weight: normal;*/
         position: relative;
         font-size: 14px;
         font-family: Calibri;
@@ -1365,7 +1365,7 @@ div#top-myNavbar {
 header nav .navbar-nav li a{font-size: 10px;}
 .history-page .hr-speaking .content p.title, .office-location p, .hr-speaking .content ul li, .benifits .hr-speaking .content ul li, .growth-page .hr-speaking .content ul li, .work-vs-life-page p, .quality-page .quality_sec .content p, .quality-page .quality_sec .content ol li, .life-content .hr-speaking ol li, .main-work-page .hr-speaking .content ul li{font-size: 14px; font-weight:600;}
 .employement-outr .main-wrap .talking_vector.bottom{/*max-width: 260px; right:-10px;*/
-    right: -12px;
+    right: 0px;
     bottom: inherit !important;
     top: 200px;
 }
@@ -1530,7 +1530,16 @@ header nav .navbar-nav li a.anchor-no-css {
   border:none;	
   height:inherit;
 }
-
+/*12-04-18*/
+.main-history-list ul li{margin-bottom: 5px;}
+.quality-page-list ol li{margin-bottom: 20px;}
+.life-flat-list ol li{margin-bottom: 15px;}
+.main-work-list ul li{list-style: decimal;margin-bottom: 15px;}
+.employment-list  p{margin-bottom: 25px;}
+.employment-list ul li{list-style-type: none;margin-bottom: 5px;}
+.growth-page-list ul li{list-style: decimal;margin-bottom: 10px;}
+.benifits .hr-speaking .content ul li strong{font-size: 16px;margin-bottom: 5px;}
+.benifits-page-list ul li{margin-bottom: 5px;list-style-type: none;}
 
 
 
@@ -1541,7 +1550,7 @@ header nav .navbar-nav li a.anchor-no-css {
 /***********************************/
  @media (max-width:1600px){
      .life_flat-page .main-wrap .talking_vector.right{
-         right: -2.21%;
+         right: -1.21%;
     }
      body.active_menu{
          overflow: hidden;
@@ -1580,12 +1589,14 @@ li.sub-menus.user-name-menu{ width:80px; }
     }
      .main-work-page .main-wrap{
         height:calc(100% - 96px);
+        overflow:visible;
     }
      .employement-outr{
          background-position: 0 top;
     }
      .life-content .hr-speaking ol li{
-         font-size: 21px;
+         font-size: 14px;
+         font-weight: 600;
     }
      body.growth-page .talking_vector{
         left:-5% !important;
@@ -2124,7 +2135,7 @@ i.fa.fa-search-plus {
     width:  482px;
 }
 .fullscreen.video-esc video{height: 100%; width: 100%;}
-.popup-zoom.worklife-popup-zoom p{font-size:20px;}
+.popup-zoom.worklife-popup-zoom p{font-size:20px; font-weight:normal;}
 
 .fa.fa-search-plus{
 

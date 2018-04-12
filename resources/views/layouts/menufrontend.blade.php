@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span> 
             </button>
-            <!--                  <a class="navbar-brand" href="#">WebSiteName</a>-->
+            <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
          </div>
          <div class="collapse navbar-collapse" id="top-myNavbar">
             <ul class="nav navbar-nav">
@@ -16,7 +16,18 @@
                   <li><a href="{{ route('register') }}">Register</a></li>
                @else
                
-                  <li class="sub-menus user-name-menu front-menu"> <a class="anchor-no-css" href="#">{{ Auth::user()->name }} </a>
+                  <li class="sub-menus user-name-menu front-menu"> <a class="anchor-no-css" href="#">
+                  @php
+                  $username = Auth::user()->name;
+                  $namecount = strlen($username);
+                     if($namecount <= 15){
+                        echo $username;
+                     }else{
+                        $string = substr($username,0,15).'...';
+                        echo $string;
+                     }
+                  @endphp
+                  </a>
                      <ul class="inner-user-menu">
                      <li><a href="{{route('user.admin.homepage')}}">Dashboard</a></li>
                      <li>

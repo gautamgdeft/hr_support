@@ -26,7 +26,7 @@
             </div>
          </section>
       </div>
-       <div class="popup-zoom benifits-popup-zoom" id="zoom-txt">
+       <div class="popup-zoom benifits-popup-zoom benifits-page-list" id="zoom-txt">
             <a class="popup-close ">X</a>
              {!!html_entity_decode($benifitstext[0]['benifits_text'])!!}
                <a href="{{ route('fun') }}" class="btn-nxt">Next</a>

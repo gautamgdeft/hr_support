@@ -139,7 +139,8 @@ class backendController extends Controller
             
             if($file_extention == "mp4" || $file_extention == "ogg" || $file_extention == "mov" || $file_extention == "flv" )
             {
-                request()->columncenter->move(public_path('images'), $imageName);
+                $pathimage = base_path().'/images/';
+                request()->columncenter->move($pathimage, $imageName);
             }else{
                 return redirect()->route('homesection')->with('homevideoerror' , 'Video formatt should be .mp4 , .ogg , .mov'); 
             }
@@ -445,7 +446,8 @@ class backendController extends Controller
         if ($request->hasFile('photo')) {   
             $contact->photo = $imageName;
         }
-        request()->photo->move(public_path('images'), $imageName);
+        $pathimage = base_path().'/images/';
+        request()->photo->move($pathimage, $imageName);
         $contact->save();
         return redirect()->route('contact.section')->with('contactadd' , 'Added successfully'); 
     }
@@ -460,13 +462,14 @@ class backendController extends Controller
 /*update contact details*/
     public function contactsecupdate(Request $request){
         request()->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', 
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048', 
         ]);
         $contactdata  = Contact::find($request->contact_id);
 
         if(!empty($request->photo)){
             $imageName = time().'.'.request()->photo->getClientOriginalExtension();
-            request()->photo->move(public_path('images'), $imageName);
+            $pathimage = base_path().'/images/';
+            request()->photo->move($pathimage, $imageName);
         }else{
             $imageName = $request->oldphoto;
         }
@@ -519,7 +522,8 @@ class backendController extends Controller
         $fun = new Fun();
         $fun->event_name = $request->event_name;
         $imageName = time().'.'.request()->event_image->getClientOriginalExtension();
-        request()->event_image->move(public_path('images'), $imageName);
+           $pathimage = base_path().'/images/';
+        request()->event_image->move($pathimage, $imageName);
          if ($request->hasFile('event_image')) {   
             $fun->event_image = $imageName;
         }
@@ -534,7 +538,8 @@ class backendController extends Controller
             $fungallery = new Funimages();
             $fungallery->event_id = $fun->id;
             $imagegalName = time().'_'.$str.'.'.$gallery->getClientOriginalExtension();
-            $gallery->move(public_path('images'), $imagegalName);
+              $pathimage = base_path().'/images/';
+            $gallery->move($pathimage, $imagegalName);
              if ($request->hasFile('event_gallery')) {   
                 $fungallery->event_gallery = $imagegalName;
             }
@@ -557,8 +562,9 @@ class backendController extends Controller
         foreach($funcover as $funcoverimg){
             //dd($funcoverimg);
            $imagename =  $funcoverimg['event_image'];
-            $path = '/images/' . $imagename;
-             unlink(public_path() . $path);
+            $path = base_path().'/images/'. $imagename;
+            //$path = '/images/' . $imagename;
+             unlink($path);
         }
 
         $detail = Fun::where('id', $fun_id)->delete();
@@ -566,8 +572,9 @@ class backendController extends Controller
         $funimages = Funimages::where('event_id', $fun_id)->get();
         foreach($funimages as $imgsfun){
            $imagename =  $imgsfun['event_gallery'];
-            $path = '/images/' . $imagename;
-             unlink(public_path() . $path);
+           $path = base_path().'/images/'. $imagename;
+            //$path = '/images/' . $imagename;
+             unlink($path);
         }
         $detail = Funimages::where('event_id', $fun_id)->delete();
 
@@ -591,8 +598,8 @@ class backendController extends Controller
         $fundata  = Fun::find($request->fun_id);
         if(!empty($request->event_image)){
             $imageName = time().'.'.request()->event_image->getClientOriginalExtension();
-            
-            request()->event_image->move(public_path('images'), $imageName);
+            $pathimage = base_path().'/images/';
+            request()->event_image->move($pathimage, $imageName);
         }else{
             $imageName = $request->oldphoto;
         }
@@ -618,7 +625,8 @@ class backendController extends Controller
                 $fungallery->event_id = $fun_id;
                 $imagegalName = time().'_'.$str.'.'.$gallery->getClientOriginalExtension();
                 // dd( $imagegalName);
-                $gallery->move(public_path('images'), $imagegalName);
+                $pathimage = base_path().'/images/';
+                $gallery->move($pathimage, $imagegalName);
                 if ($request->hasFile('event_gallery')) 
                 {   
                     $fungallery->event_gallery = $imagegalName;
@@ -645,8 +653,9 @@ class backendController extends Controller
         
         foreach($fungaldlt as $fungaldelete){
             $imgname = $fungaldelete['event_gallery'];
-            $path = '/images/' . $imgname;
-             unlink(public_path() . $path);
+            //$path = '/images/' . $imgname;
+            $path = base_path().'/images/'. $imagename;
+             unlink($path);
         }
         $detail = Funimages::where('id', $fungal_id)->delete();
         
