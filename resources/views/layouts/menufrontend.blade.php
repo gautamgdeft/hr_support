@@ -58,7 +58,7 @@
          </div>
          <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-               <li class="dash-menu {{ Request::is('home') ? 'active' : '' }}"><a href="{{route('home')}}">Home</a></li>
+               <li class="dash-menu {{ Request::is('/') ? 'active' : '' }}"><a href="{{route('home')}}">Home</a></li>
                <li class="dash-menu {{ Request::is('history') ? 'active' : '' }}"><a href="{{route('history')}}">History@flatworld</a></li>
                <li class="dash-menu {{ Request::is('quality') ? 'active' : '' }}"><a href="{{route('quality')}}">Quality@flatworld</a></li>
                <li class="dash-menu {{ Request::is('life') ? 'active' : '' }}"><a href="{{route('life')}}">life@flatworld</a></li>

@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
       <title>
+         {{ Request::is('/') ? 'Hr-portal | Home' : '' }}
          {{ Request::is('login') ? 'Login' : '' }}
          {{ Request::is('home') ? 'Home' : '' }}
          {{ Request::is('history') ? 'History' : '' }}

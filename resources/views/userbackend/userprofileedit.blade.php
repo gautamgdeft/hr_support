@@ -26,8 +26,9 @@
 
     <div class="edit-details">
              <table class="users-details-table" colspan="10" rowspan="5">
+             <input type="hidden" name="oldphoto"  value="{{Auth::User()->image}}">
                 <tr><th><b>Name: </b></th><td><input type="text" value="{{ Auth::user()->name }}" name="name" required="required"></td></tr>
-                <tr><th><b>Image: </b></th><td><input type="file" name="image" required="required"></td></tr>
+                <tr><th><b>Image: </b></th><td><input type="file" name="image"></td></tr>
 
             @if ($errors->has('image'))
                <div class="alert-box alert">

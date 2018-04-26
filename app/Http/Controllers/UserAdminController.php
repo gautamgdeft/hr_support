@@ -47,7 +47,7 @@ class UserAdminController extends Controller
 
        request()->validate([
 
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             
         ]);
 
@@ -56,11 +56,16 @@ class UserAdminController extends Controller
 	        return redirect()->route('user.edit.profile')->with('usernamefailed' , 'Name Should not be empty'); 
 	    }else{
 	        $user->name = $request->input('name');
+
+	        if(!empty($request->file('image'))){
 	        $image = $request->file('image');
-
 	        //image upload comes from Modal Imageupdate 
+	        $save_image = Imageupload::imageupload($image, $user); 
+	        }else{
+				
+				$image = $request->file('oldphoto');
 
-	        $save_image = Imageupload::imageupload($image, $user);   
+	        }  
 	    }
 
        	$user->save();

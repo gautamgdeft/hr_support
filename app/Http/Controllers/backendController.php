@@ -654,7 +654,7 @@ class backendController extends Controller
         foreach($fungaldlt as $fungaldelete){
             $imgname = $fungaldelete['event_gallery'];
             //$path = '/images/' . $imgname;
-            $path = base_path().'/images/'. $imagename;
+            $path = base_path().'/images/'. $imgname;
              unlink($path);
         }
         $detail = Funimages::where('id', $fungal_id)->delete();

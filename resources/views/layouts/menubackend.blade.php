@@ -5,7 +5,16 @@
                             <img src="/backend/img/avatar3.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, {{ Auth::user()->name }}</p>
+                            <p>Hello, @php
+                              $username = Auth::user()->name;
+                              $namecount = strlen($username);
+                                 if($namecount <= 10){
+                                    echo $username;
+                                 }else{
+                                    $string = substr($username,0,10).'...';
+                                    echo $string;
+                                 }
+                              @endphp</p>
 
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>

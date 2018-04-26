@@ -8,8 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+   <!--  <title>{{ config('app.name', 'Hr-Portal-Login') }}</title> -->
+   <title>{{ Request::is('login') ? 'Hr-Portal Login' : 'Hr-portal' }}</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
